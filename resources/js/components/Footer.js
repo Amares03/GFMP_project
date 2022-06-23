@@ -18,7 +18,6 @@ class Footer extends Component {
                         </a>
                         <span className="mb-3 mb-md-0 text-muted">© 2022 Company, Inc</span>
                         </div>
-
                         <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
                         <li className="ms-3"><a className="text-muted" href="#">Twitter</a></li>
                         <li className="ms-3"><a className="text-muted" href="#">Instagram</a></li>
