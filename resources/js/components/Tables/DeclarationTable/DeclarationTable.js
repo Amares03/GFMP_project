@@ -26,7 +26,7 @@ constructor(props){
                         tableData: response.data, 
                         
                     })
-                    console.log(response.data);
+                    
                 })
              }
 

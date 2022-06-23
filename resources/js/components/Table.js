@@ -4,6 +4,7 @@ import axios from 'axios';
 // import 'react-toastify/dist/ReactToastify.css';
 import CertificateTable from './Tables/CertificateTable/CertificateTable';
 import DeclarationTable from './Tables/DeclarationTable/DeclarationTable';
+import ForOfficeUse from './Tables/ForOfficeUse/ForOfficeUse';
 
 
 class Table extends Component {
@@ -44,6 +45,7 @@ class Table extends Component {
                     <div className="card">
                         <CertificateTable/>
                         <DeclarationTable/>
+                        <ForOfficeUse/>
                     </div>
                 </div>
             </div>

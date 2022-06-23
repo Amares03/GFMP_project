@@ -7,6 +7,12 @@ use Exception;
 use Log;
 use App\Models\certificate_link;
 use App\Models\declaration;
+use App\Models\for_office_use;
+use App\Models\mode_of_payment;
+use App\Models\nominated_beneficiaries;
+use App\Models\personal_details;
+use App\Models\terms_and_conditions;
+use App\Models\types_of_product_purchased;
 
 class AllController extends Controller
 {
