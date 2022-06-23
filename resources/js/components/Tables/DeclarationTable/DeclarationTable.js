@@ -3,7 +3,7 @@ import axios from 'axios';
 import TableRow from './TableRow';
 
 
-class CertificateTable extends Component {
+class DeclarationTable extends Component {
 constructor(props){
             super(props);
             this.state = {
@@ -13,14 +13,14 @@ constructor(props){
 
         // Life cycle Method
         componentDidMount(){
-            this.getCertificateData();
+            this.getDeclarationData();
         }
 
         // Get data List.
-        getCertificateData = ()=>{
+        getDeclarationData = ()=>{
             let self = this; 
                 axios
-                .get('/get/certificate/data')
+                .get('/get/declaration/data')
                 .then(function (response){
                     self.setState({
                         tableData: response.data, 
@@ -35,12 +35,18 @@ constructor(props){
     render(){
         return (
             <>
-            <h4 className='text-left mt-3'>Certificate Table</h4>
+            <h4 className='text-left mt-3'>Declaration Table</h4>
                         <table className="table table-hover ">
                             <thead>
                                 <tr>
                                     <th scope='col' width='100px'>#</th>
-                                    <th scope='col' width='100px'>Certificate</th>
+                                    <th scope='col' width='100px'>Blank1</th>
+                                    <th scope='col' width='100px'>Blank2</th>
+                                    <th scope='col' width='100px'>Blank3</th>
+                                    <th scope='col' width='100px'>Blank4</th>
+                                    <th scope='col' width='100px'>Blank5</th>
+                                    <th scope='col' width='100px'>Blank6</th>
+                                    <th scope='col' width='100px'>Blank7</th>
                                     <th scope='col' width='100px'>Actions</th>
                                 </tr>
                             </thead>
@@ -60,4 +66,4 @@ constructor(props){
 
 
 
-export default CertificateTable;
+export default DeclarationTable;

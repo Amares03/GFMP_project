@@ -23,3 +23,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/get/certificate/data',[AllController::class, 'getCertificateData'])->name('certificate.data');
+Route::get('/get/declaration/data',[AllController::class, 'getDeclarationData'])->name('declaration.data');

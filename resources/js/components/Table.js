@@ -3,6 +3,7 @@ import axios from 'axios';
 // import { ToastContainer, toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 import CertificateTable from './Tables/CertificateTable/CertificateTable';
+import DeclarationTable from './Tables/DeclarationTable/DeclarationTable';
 
 
 class Table extends Component {
@@ -42,6 +43,7 @@ class Table extends Component {
                 <div className="col-md-8">
                     <div className="card">
                         <CertificateTable/>
+                        <DeclarationTable/>
                     </div>
                 </div>
             </div>
