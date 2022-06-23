@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class certificate_link extends Model
+class terms_and_conditions extends Model
 {
     use HasFactory;
     protected $fillable =[
-        'certificate'
+        'terms_table'
     ];
 }

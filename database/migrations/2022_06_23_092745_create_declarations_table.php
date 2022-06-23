@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('declarations', function (Blueprint $table) {
             $table->id();
-            $table->string('Blank1');
-            $table->string('Blank2');
-            $table->string('Blank3');
-            $table->string('Blank4');
-            $table->string('Blank5');
-            $table->string('Blank6');
-            $table->string('Blank7');
+            $table->string('Blank1',200);
+            $table->string('Blank2',200);
+            $table->string('Blank3',200);
+            $table->string('Blank4',200);
+            $table->string('Blank5',200);
+            $table->string('Blank6',200);
+            $table->string('Blank7',200);
             $table->timestamps();
         });
     }

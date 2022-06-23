@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class nominated_beneficiaries extends Model
 {
     use HasFactory;
+    protected $fillable =[
+        'name',
+        'age',
+        'relationship'
+    ];
 }

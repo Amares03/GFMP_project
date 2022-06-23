@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('nominated_beneficiaries', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name',200);
             $table->integer('age');
-            $table->string('relationship');
+            $table->string('relationship',200);
             $table->timestamps();
         });
     }

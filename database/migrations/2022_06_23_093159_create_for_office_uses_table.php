@@ -15,15 +15,15 @@ return new class extends Migration
     {
         Schema::create('for_office_uses', function (Blueprint $table) {
             $table->id();
-            $table->string('application');
-            $table->string('payment_period');
-            $table->int('cash');
-            $table->int('3_months');
-            $table->int('6_months');
-            $table->string('other');
-            $table->string('monthly_instalment');
-            $table->string('authorized_signatory');
-            $table->string('plot_number');
+            $table->string('application',200);
+            $table->string('payment_period',200);
+            $table->tinyInteger('cash');
+            $table->tinyInteger('3_months');
+            $table->tinyInteger('6_months');
+            $table->string('other',100);
+            $table->string('monthly_instalment',200);
+            $table->string('authorized_signatory',200);
+            $table->integer('plot_number');
             $table->timestamps();
         });
     }
