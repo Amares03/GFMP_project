@@ -31,4 +31,58 @@ class AllController extends Controller
             Log::error($e);
         }
     }
+    // Get for_office_use list from database
+    public function getForOfficeUseData(){
+        try {
+            $List = for_office_use::all();
+            return response()->json($List);
+        } catch (Exception $e) {
+            Log::error($e);
+        }
+    }
+    // Get mode_of_payment list from database
+    public function getModeOfPaymentData(){
+        try {
+            $List = mode_of_payment::all();
+            return response()->json($List);
+        } catch (Exception $e) {
+            Log::error($e);
+        }
+    }
+    // Get nominated_beneficiaries list from database
+    public function getNominatedBeneficiariesData(){
+        try {
+            $List = nominated_beneficiaries::all();
+            return response()->json($List);
+        } catch (Exception $e) {
+            Log::error($e);
+        }
+    }
+    // Get personal_details list from database
+    public function getPersonalDetailsData(){
+        try {
+            $List = personal_details::all();
+            return response()->json($List);
+        } catch (Exception $e) {
+            Log::error($e);
+        }
+    }
+    // Get terms_and_conditions list from database
+    public function getTermsAndConditionsData(){
+        try {
+            $List = terms_and_conditions::all();
+            return response()->json($List);
+        } catch (Exception $e) {
+            Log::error($e);
+        }
+    }
+    // Get types_of_product_purchased list from database
+    public function getTypesOfProductPurchasedData(){
+        try {
+            $List = types_of_product_purchased::all();
+            return response()->json($List);
+        } catch (Exception $e) {
+            Log::error($e);
+        }
+    }
 }

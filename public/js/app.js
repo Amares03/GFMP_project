@@ -5836,7 +5836,8 @@ var DeclarationTable = /*#__PURE__*/function (_Component) {
       axios__WEBPACK_IMPORTED_MODULE_1___default().get('/get/declaration/data').then(function (response) {
         self.setState({
           tableData: response.data
-        }); // console.log(response);
+        });
+        console.log(response.data);
       });
     });
 

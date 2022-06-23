@@ -3,7 +3,7 @@ import axios from 'axios';
 import TableRow from './TableRow';
 
 
-class DeclarationTable extends Component {
+class ForOfficeUse extends Component {
 constructor(props){
             super(props);
             this.state = {
@@ -13,20 +13,20 @@ constructor(props){
 
         // Life cycle Method
         componentDidMount(){
-            this.getDeclarationData();
+            this.getForOfficeUseData();
         }
 
         // Get data List.
-        getDeclarationData = ()=>{
+        getForOfficeUseData = ()=>{
             let self = this; 
                 axios
-                .get('/get/declaration/data')
+                .get('/get/for_office_use/data')
                 .then(function (response){
                     self.setState({
                         tableData: response.data, 
                         
                     })
-                    console.log(response.data);
+                    // console.log(response);
                 })
              }
 
@@ -35,18 +35,20 @@ constructor(props){
     render(){
         return (
             <>
-            <h4 className='text-left mt-3'>Declaration Table</h4>
+            <h4 className='text-left mt-3'>For Office Use Table</h4>
                         <table className="table table-hover ">
                             <thead>
                                 <tr>
                                     <th scope='col' width='100px'>#</th>
-                                    <th scope='col' width='100px'>Blank1</th>
-                                    <th scope='col' width='100px'>Blank2</th>
-                                    <th scope='col' width='100px'>Blank3</th>
-                                    <th scope='col' width='100px'>Blank4</th>
-                                    <th scope='col' width='100px'>Blank5</th>
-                                    <th scope='col' width='100px'>Blank6</th>
-                                    <th scope='col' width='100px'>Blank7</th>
+                                    <th scope='col' width='100px'>Application</th>
+                                    <th scope='col' width='100px'>Payment Period</th>
+                                    <th scope='col' width='50px'>Cash</th>
+                                    <th scope='col' width='50px'>3 Months</th>
+                                    <th scope='col' width='50px'>6 Months</th>
+                                    <th scope='col' width='100px'>Other</th>
+                                    <th scope='col' width='100px'>Monthly Instalment</th>
+                                    <th scope='col' width='100px'>Authorized Signatory</th>
+                                    <th scope='col' width='100px'>Plot Number</th>
                                     <th scope='col' width='100px'>Actions</th>
                                 </tr>
                             </thead>
@@ -66,4 +68,4 @@ constructor(props){
 
 
 
-export default DeclarationTable;
+export default ForOfficeUse;
