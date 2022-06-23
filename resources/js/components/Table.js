@@ -5,6 +5,9 @@ import axios from 'axios';
 import CertificateTable from './Tables/CertificateTable/CertificateTable';
 import DeclarationTable from './Tables/DeclarationTable/DeclarationTable';
 import ForOfficeUse from './Tables/ForOfficeUse/ForOfficeUse';
+import ModeOfPayment from './Tables/ModeOfPayment/ModeOfPayment';
+import NominatedBeneficiaries from './Tables/NominatedBeneficiaries/NominatedBeneficiaries';
+import PersonalDetails from './Tables/PersonalDetails/PersonalDetails';
 
 
 class Table extends Component {
@@ -42,11 +45,14 @@ class Table extends Component {
         
             <div className="row justify-content-center">
                 <div className="col-md-8">
-                    <div className="card">
+                    {/* <div className="card"> */}
                         <CertificateTable/>
                         <DeclarationTable/>
                         <ForOfficeUse/>
-                    </div>
+                        <ModeOfPayment/>
+                        <NominatedBeneficiaries/>
+                        <PersonalDetails/>
+                    {/* </div> */}
                 </div>
             </div>
         </div>

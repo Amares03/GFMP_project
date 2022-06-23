@@ -32,16 +32,11 @@ class TableRow extends Component {
     render(){
         return(
             <tr>
-                <td>{this.state.tableData[0]}</td>
-                <td>{this.state.tableData[1]}</td>
-                <td>{this.state.tableData[2]}</td>
-                <td>{this.state.tableData[3]}</td>
-                <td>{this.state.tableData[4]}</td>
-                <td>{this.state.tableData[5]}</td>
-                <td>{this.state.tableData[6]}</td>
-                <td>{this.state.tableData[7]}</td>
-                <td>{this.state.tableData[8]}</td>
-                <td>{this.state.tableData[9]}</td>
+                {
+                this.state.tableData.map(function(x,i){
+                                        return <td>{x}</td>
+                                    })
+                }
                 <td>
                     <div className="btn-group" role="group">
                         <button type="button" className="btn btn-primary">Left</button>

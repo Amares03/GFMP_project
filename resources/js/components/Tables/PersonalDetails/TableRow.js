@@ -4,14 +4,13 @@ import React, { Component } from 'react';
 class TableRow extends Component {
     constructor(props){
         super(props);
-        this.state ={
+         this.state ={
             tableData: [],
         }
 
     }
 
-
-    // Life cycle Method
+      // Life cycle Method
         componentDidMount(){
             this.getArryList();
         }
@@ -38,6 +37,7 @@ class TableRow extends Component {
                                         return <td>{x}</td>
                                     })
                 }
+                
                 <td>
                     <div className="btn-group" role="group">
                         <button type="button" className="btn btn-primary">Left</button>
