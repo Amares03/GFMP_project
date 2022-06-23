@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
+import { BsFillEyeFill } from 'react-bootstrap-icons';
 
 
 class TableRow extends Component {
     constructor(props){
         super(props);
-        this.state ={
+         this.state ={
             tableData: [],
         }
 
     }
 
-
-    // Life cycle Method
+      // Life cycle Method
         componentDidMount(){
             this.getArryList();
         }
@@ -35,14 +35,15 @@ class TableRow extends Component {
             <tr>
                 {
                 this.state.tableData.map(function(x,i){
-                                        return <td key={i}>{x}</td>
+                                        return <td>{x}</td>
                                     })
                 }
+                
                 <td>
                     <div className="btn-group" role="group">
-                        {/* <button type="button" className="btn btn-primary">Left</button> */}
-                        <button type="button" className="btn btn-primary">Update</button>
-                        <button type="button" className="btn btn-primary">Delete</button>
+                        <button type="button" className="btn btn-primary"><BsFillEyeFill/></button>
+                        <button type="button" className="btn btn-primary">Middle</button>
+                        <button type="button" className="btn btn-primary">Right</button>
                     </div>
                 </td>
             </tr>

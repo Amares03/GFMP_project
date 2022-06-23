@@ -35,14 +35,14 @@ class TableRow extends Component {
             <tr>
                 {
                 this.state.tableData.map(function(x,i){
-                                        return <td>{x}</td>
+                                        return <td key={i}>{x}</td>
                                     })
                 }
                 <td>
                     <div className="btn-group" role="group">
-                        <button type="button" className="btn btn-primary">Left</button>
-                        <button type="button" className="btn btn-primary">Middle</button>
-                        <button type="button" className="btn btn-primary">Right</button>
+                        {/* <button type="button" className="btn btn-primary">View</button> */}
+                        <button type="button" className="btn btn-primary">Update</button>
+                        <button type="button" className="btn btn-danger">Delete</button>
                     </div>
                 </td>
             </tr>

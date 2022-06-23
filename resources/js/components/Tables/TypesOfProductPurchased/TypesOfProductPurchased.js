@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-// import TableRow from './TableRow';
-import TablesRow from '../TablesRow';
+import TableRow from './TableRow';
 
 
-class CertificateTable extends Component {
+
+class TypesOfProductPurchased extends Component {
 constructor(props){
             super(props);
             this.state = {
@@ -14,14 +14,14 @@ constructor(props){
 
         // Life cycle Method
         componentDidMount(){
-            this.getCertificateData();
+            this.getTypesOfProductPurchasedData();
         }
 
         // Get data List.
-        getCertificateData = ()=>{
+        getTypesOfProductPurchasedData = ()=>{
             let self = this; 
                 axios
-                .get('/get/certificate/data')
+                .get('/get/types_of_product_purchased/data')
                 .then(function (response){
                     self.setState({
                         tableData: response.data, 
@@ -36,19 +36,26 @@ constructor(props){
     render(){
         return (
             <>
-            <h4 className='text-left mt-3'>Certificate Table</h4>
+            <h4 className='text-left mt-3'>Types Of Product Purchased Table</h4>
                         <table className="table table-hover ">
                             <thead>
                                 <tr>
-                                    <th scope='col' width='100px'>#</th>
-                                    <th scope='col' width='100px'>Certificate</th>
+                                    <th scope='col' width='50px'>#</th>
+                                    <th scope='col' width='50px'>Glen Forest Memorial Park</th>
+                                    <th scope='col' width='50px'>Chemhute Park</th>
+                                    <th scope='col' width='50px'>Matidoda Park</th>
+                                    <th scope='col' width='50px'>Single Unit</th>
+                                    <th scope='col' width='50px'>Double Unit</th>
+                                    <th scope='col' width='50px'>Triple Unit</th>
+                                    <th scope='col' width='50px'>Family Close</th>
+                                    <th scope='col' width='50px'>Other (please give details)</th>
                                     <th scope='col' width='100px'>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {
                                     this.state.tableData.map(function(x,i){
-                                        return <TablesRow key={i} data={x}/>
+                                        return <TableRow key={i} data={x}/>
                                     })
                                 }
                             </tbody>
@@ -61,4 +68,4 @@ constructor(props){
 
 
 
-export default CertificateTable;
+export default TypesOfProductPurchased;

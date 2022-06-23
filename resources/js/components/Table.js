@@ -8,6 +8,8 @@ import ForOfficeUse from './Tables/ForOfficeUse/ForOfficeUse';
 import ModeOfPayment from './Tables/ModeOfPayment/ModeOfPayment';
 import NominatedBeneficiaries from './Tables/NominatedBeneficiaries/NominatedBeneficiaries';
 import PersonalDetails from './Tables/PersonalDetails/PersonalDetails';
+import TermsAndConditions from './Tables/TermsAndConditions/TermsAndConditions';
+import TypesOfProductPurchased from './Tables/TypesOfProductPurchased/TypesOfProductPurchased';
 
 
 class Table extends Component {
@@ -52,6 +54,8 @@ class Table extends Component {
                         <ModeOfPayment/>
                         <NominatedBeneficiaries/>
                         <PersonalDetails/>
+                        <TermsAndConditions/>
+                        <TypesOfProductPurchased/>
                     {/* </div> */}
                 </div>
             </div>

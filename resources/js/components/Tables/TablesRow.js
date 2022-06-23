@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-class TableRow extends Component {
+class TablesRow extends Component {
     constructor(props){
         super(props);
         this.state ={
@@ -40,9 +40,9 @@ class TableRow extends Component {
                 }
                 <td>
                     <div className="btn-group" role="group">
-                        {/* <button type="button" className="btn btn-primary">Left</button> */}
+                        {/* <button type="button" className="btn btn-primary">View</button> */}
                         <button type="button" className="btn btn-primary">Update</button>
-                        <button type="button" className="btn btn-primary">Delete</button>
+                        <button type="button" className="btn btn-danger">Delete</button>
                     </div>
                 </td>
             </tr>
@@ -50,4 +50,4 @@ class TableRow extends Component {
     }
 }
 
-export default TableRow;
+export default TablesRow;
