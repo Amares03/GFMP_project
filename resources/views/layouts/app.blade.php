@@ -21,10 +21,12 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-green shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                <a class="navbar-brand" href="{{ url('/') }}" style="color:green;">
+                    <strong>
+                        Glen Forest 
+                    </strong>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -79,5 +81,21 @@
             @yield('content')
         </main>
     </div>
+
+    <div class="container">
+                    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                        <div class="col-md-4 d-flex align-items-center">
+                        <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                           LOGO Here
+                        </a>
+                        <span class="mb-3 mb-md-0 text-muted">© 2022 Company, Inc</span>
+                        </div>
+                        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                        <li class="ms-3"><a class="text-muted" href="#">Twitter</a></li>
+                        <li class="ms-3"><a class="text-muted" href="#">Instagram</a></li>
+                        <li class="ms-3"><a class="text-muted" href="#">Facebook</a></li>
+                        </ul>
+                    </footer>
+                </div>
 </body>
 </html>

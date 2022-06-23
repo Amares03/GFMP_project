@@ -1,30 +1,32 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 // import { ToastContainer, toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
+import CertificateTable from './Tables/CertificateTable/CertificateTable';
 
 
 class Table extends Component {
         constructor(props){
             super(props);
             this.state = {
-                employees: [],
+                tableData: [],
             }
         }
 
-        // Life cycle Method
+        // // Life cycle Method
         // componentDidMount(){
-        //     this.getEmployeeList();
+        //     this.getCertificateData();
         // }
 
-        // Get Employee List.
-        // getEmployeeList = ()=>{
+        // // Get data List.
+        // getCertificateData = ()=>{
         //     let self = this; 
         //         axios
-        //         .get('/get/employee/list')
+        //         .get('/get/certificate/list')
         //         .then(function (response){
         //             self.setState({
-        //                 employees: response.data,
+        //                 // tableData: response.data,
+                        
         //             })
         //         })
         //      }
@@ -39,21 +41,7 @@ class Table extends Component {
             <div className="row justify-content-center">
                 <div className="col-md-8">
                     <div className="card">
-                        <h2 className='text-center mt-3'>Certificate Table</h2>
-                        <table className="table table-hover ">
-                            <thead>
-                                <tr>
-                                    <th scope='col' width='100px'>#</th>
-                                    <th scope='col' width='100px'>Certificate</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>certificate gose here</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <CertificateTable/>
                     </div>
                 </div>
             </div>

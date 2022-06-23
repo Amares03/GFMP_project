@@ -1,5 +1,4 @@
 import React from 'react';
-import Footer from './Footer';
 import Table from './Table';
 
 
@@ -9,8 +8,6 @@ function App() {
             <div className="row justify-content-center">
                {/* components go here */}
                <Table/>
-               <Footer/>
-
             </div>
         </div>
     );
