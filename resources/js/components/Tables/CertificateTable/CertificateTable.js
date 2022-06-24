@@ -48,7 +48,7 @@ constructor(props){
                             <tbody>
                                 {
                                     this.state.tableData.map(function(x,i){
-                                        return <TablesRow key={i} data={x}/>
+                                        return <TablesRow key={i} data={x} url={'certificate'}/>
                                     })
                                 }
                             </tbody>

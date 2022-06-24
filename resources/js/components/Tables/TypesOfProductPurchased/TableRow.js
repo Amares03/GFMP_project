@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BsFillEyeFill } from 'react-bootstrap-icons';
+
 
 
 class TableRow extends Component {
@@ -41,7 +41,7 @@ class TableRow extends Component {
                 
                 <td>
                     <div className="btn-group" role="group">
-                        <button type="button" className="btn btn-primary"><BsFillEyeFill/></button>
+                        {/* <button type="button" className="btn btn-primary"></button> */}
                         <button type="button" className="btn btn-primary">Middle</button>
                         <button type="button" className="btn btn-primary">Right</button>
                     </div>

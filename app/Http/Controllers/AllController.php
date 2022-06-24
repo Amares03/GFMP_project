@@ -91,4 +91,71 @@ class AllController extends Controller
             Log::error($e);
         }
     }
+
+    // delete individual user
+
+    //delete certificate user
+    public function deleteCertificateUser(certificate_link $id){
+        try {
+            $id->delete();
+        } catch (Exception $e) {
+            Log::error($e);
+        }
+    }
+    //delete declaration user
+    public function deleteDeclarationUser(declaration $id){
+        try {
+            $id->delete();
+        } catch (Exception $e) {
+            Log::error($e);
+        }
+    }
+    //delete for_office_use user
+    public function deleteForOfficeUseUser(for_office_use $id){
+        try {
+            $id->delete();
+        } catch (Exception $e) {
+            Log::error($e);
+        }
+    }
+    //delete mode_of_payment user
+    public function deleteModeOfPaymentUser(mode_of_payment $id){
+        try {
+            $id->delete();
+        } catch (Exception $e) {
+            Log::error($e);
+        }
+    }
+    //delete nominated_beneficiaries user
+    public function deleteNominatedBeneficiariesUser(nominated_beneficiaries $id){
+        try {
+            $id->delete();
+        } catch (Exception $e) {
+            Log::error($e);
+        }
+    }
+    //delete personal_details user
+    public function deletePersonalDetailsUser(personal_details $id){
+        try {
+            $id->delete();
+        } catch (Exception $e) {
+            Log::error($e);
+        }
+    }
+    //delete terms_and_conditions user
+    public function deleteTermsAndConditionsUser(terms_and_conditions $id){
+        try {
+            $id->delete();
+        } catch (Exception $e) {
+            Log::error($e);
+        }
+    }
+    //delete types_of_product_purchased user
+    public function deleteTypesOfProductPurchasedUser(types_of_product_purchased $id){
+        try {
+            $id->delete();
+        } catch (Exception $e) {
+            Log::error($e);
+        }
+    }
 }

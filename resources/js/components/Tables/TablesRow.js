@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import TablesActionButton from './TablesActionButton';
 
 class TablesRow extends Component {
     constructor(props){
@@ -39,11 +39,7 @@ class TablesRow extends Component {
                                     })
                 }
                 <td>
-                    <div className="btn-group" role="group">
-                        {/* <button type="button" className="btn btn-primary">View</button> */}
-                        <button type="button" className="btn btn-primary">Update</button>
-                        <button type="button" className="btn btn-danger">Delete</button>
-                    </div>
+                    <TablesActionButton eachRowId={this.props.data.id} url={this.props.url}/>
                 </td>
             </tr>
         )

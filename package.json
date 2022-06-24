@@ -26,6 +26,8 @@
     "dependencies": {
         "autoprefixer": "10.4.5",
         "bootstrap-icons": "^1.8.3",
-        "react-bootstrap-icons": "^1.8.4"
+        "react-bootstrap-icons": "^1.8.4",
+        "react-icons": "^4.4.0",
+        "react-toastify": "^9.0.5"
     }
 }

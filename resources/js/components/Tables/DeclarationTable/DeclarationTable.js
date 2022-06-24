@@ -23,10 +23,9 @@ constructor(props){
                 .get('/get/declaration/data')
                 .then(function (response){
                     self.setState({
-                        tableData: response.data, 
+                        tableData: response.data,
                         
-                    })
-                    
+                    })                    
                 })
              }
 
@@ -53,7 +52,7 @@ constructor(props){
                             <tbody>
                                 {
                                     this.state.tableData.map(function(x,i){
-                                        return <TablesRow key={i} data={x}/>
+                                        return <TablesRow key={i} data={x} url={'declaration'}/>
                                     })
                                 }
                             </tbody>
