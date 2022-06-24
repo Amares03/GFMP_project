@@ -28,6 +28,14 @@ class AllController extends Controller
         }
     }
 
+    public function getCertificateUser(certificate_link $id){
+        try {
+            return response()->json($id);
+        } catch (Exception $e) {
+            Log::error($e);
+        }
+    }
+
     // Get declaration list from database
     public function getDeclarationData(){
         try {

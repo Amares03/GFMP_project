@@ -40,3 +40,6 @@ Route::delete('delete/nominated_beneficiaries/data/{id}',[AllController::class, 
 Route::delete('delete/personal_details/data/{id}',[AllController::class, 'deletePersonalDetailsUser'])->name('personal_details.delete');
 Route::delete('delete/terms_and_conditions/data/{id}',[AllController::class, 'deleteTermsAndConditionsUser'])->name('terms_and_conditions.delete');
 Route::delete('delete/types_of_product_purchased/data/{id}',[AllController::class, 'deleteTypesOfProductPurchasedUser'])->name('types_of_product_purchased.delete');
+
+
+Route::get('get/certificate/user/{id}',[AllController::class, 'getCertificateUser'])->name('certificate.user');
