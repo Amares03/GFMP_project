@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import TableRow from './TableRow';
-
+import TablesRow from '../TablesRow';
 
 class PersonalDetails extends Component {
 constructor(props){
@@ -59,8 +58,7 @@ constructor(props){
                             <tbody>
                                 {
                                     this.state.tableData.map(function(x,i){
-                                        return <TableRow key={i} data={x}/>
-                                    })
+                                            return <TablesRow key={i} data={x} url={'personal_details'}/>                                    })
                                 }
                             </tbody>
                         </table>

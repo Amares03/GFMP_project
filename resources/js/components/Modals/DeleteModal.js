@@ -14,10 +14,10 @@ class DeleteModal extends Component {
     // delete function for employee data
     deleteUserData = (id,url)=>{
         axios.delete(`/delete/${url}/data/`+ id).then(()=>{
-            toast.error("Employee Deleted Successfully");
+            toast.error("User Deleted Successfully");
             setTimeout(() => {
                 location.reload();
-            }, 2500);
+            }, 2000);
         })
     }
     render(){
@@ -26,11 +26,11 @@ class DeleteModal extends Component {
                 <div className="modal-dialog">
                     <div className="modal-content">
                     <div className="modal-header">
-                        <h5 className="modal-title" id="exampleModalLabel">Delete Employee </h5>
+                        <h5 className="modal-title" id="exampleModalLabel">Delete User </h5>
                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div className="modal-body">
-                        Are you sure, you want to delete this employee data
+                        Are you sure, you want to delete this user data
                     </div>
                     <div className="modal-footer">
                         <button 
