@@ -1,7 +1,7 @@
 import React, { Component, useEffect, useState } from "react";
 import TablesActionButton from "./TablesActionButton";
 
-const TablesRow = ({ data: tableData, url }) => {
+const TablesRow = ({ data, url }) => {
     const [arry, setArray] = useState([]);
     const tableArray = [];
     useEffect(() => {
@@ -10,8 +10,8 @@ const TablesRow = ({ data: tableData, url }) => {
 
     // change to Arry
     const getArryList = () => {
-        for (var i in tableData) {
-            tableArray.push(tableData[i]);
+        for (var i in data) {
+            tableArray.push(data[i]);
         }
         setArray(tableArray);
     };
@@ -22,7 +22,7 @@ const TablesRow = ({ data: tableData, url }) => {
                 <td key={i}>{a}</td>
             ))}
             <td>
-                <TablesActionButton eachRowId={tableData.id} url={url} />
+                <TablesActionButton eachRowId={data.id} url={url} data={data} />
             </td>
         </tr>
     );

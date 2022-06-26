@@ -5641,7 +5641,7 @@ var CertificateTable = function CertificateTable() {
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     getCertificateData();
-  });
+  }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h4", {
       className: "text-left mt-3",
@@ -6264,107 +6264,39 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-icons/fa */ "./node_modules/react-icons/fa/index.esm.js");
 /* harmony import */ var _Modals_DeleteModal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Modals/DeleteModal */ "./resources/js/components/Modals/DeleteModal.jsx");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-
- // import axios from 'axios';
-// import ViewModel from './Models/ViewModel';
-// import UpdateModal from './Models/UpdateModal';
 
 
 
 
 
-var TablesActionButton = /*#__PURE__*/function (_Component) {
-  _inherits(TablesActionButton, _Component);
 
-  var _super = _createSuper(TablesActionButton);
-
-  function TablesActionButton(props) {
-    var _this;
-
-    _classCallCheck(this, TablesActionButton);
-
-    _this = _super.call(this, props);
-    _this.state = {
-      tableData: []
-    };
-    return _this;
-  } // change comming response to arry
-
-
-  _createClass(TablesActionButton, [{
-    key: "getArryList",
-    value: function getArryList(data) {
-      var pdata = [];
-      var self = this;
-
-      for (var i in data) {
-        pdata.push(data[i]);
-      }
-
-      self.setState({
-        tableData: pdata
-      });
-    } // Getting employees data
-    // getUserDetails = (id,url) =>{
-    //     axios
-    //     .post('/get/individual/'+ url +'/details',{
-    //         userId: id,
-    //     }).then((response)=>{
-    //     })
-    // }
-
-  }, {
-    key: "render",
-    value: function render() {
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "btn-group",
-        role: "group",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-          type: "button",
-          className: "btn btn-info" // data-bs-toggle="modal" 
-          // data-bs-target={"#updateModal"+ this.props.eachRowId}
-          // onClick={()=>{this.getUserDetails(this.props.eachRowId,this.props.url)}}
-          ,
-          children: "Update"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-          type: "button",
-          className: "btn btn-danger",
-          "data-bs-toggle": "modal",
-          "data-bs-target": "#delete" + this.props.url + "Modal" + this.props.eachRowId,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_icons_fa__WEBPACK_IMPORTED_MODULE_3__.FaTrash, {})
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Modals_DeleteModal__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          modalId: this.props.eachRowId,
-          employeeData: this.state,
-          url: this.props.url
-        })]
-      });
-    }
-  }]);
-
-  return TablesActionButton;
-}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+var TablesActionButton = function TablesActionButton(_ref) {
+  var eachRowId = _ref.eachRowId,
+      url = _ref.url,
+      data = _ref.data;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    className: "btn-group",
+    role: "group",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+      type: "button",
+      className: "btn btn-info" // data-bs-toggle="modal"
+      // data-bs-target={"#updateModal"+ this.props.eachRowId}
+      // onClick={()=>{this.getUserDetails(this.props.eachRowId,this.props.url)}}
+      ,
+      children: "Update"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+      type: "button",
+      className: "btn btn-danger",
+      "data-bs-toggle": "modal",
+      "data-bs-target": "#delete" + url + "Modal" + eachRowId,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_icons_fa__WEBPACK_IMPORTED_MODULE_3__.FaTrash, {})
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Modals_DeleteModal__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      modalId: eachRowId,
+      url: url,
+      data: data
+    })]
+  });
+};
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TablesActionButton);
 
@@ -6402,7 +6334,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var TablesRow = function TablesRow(_ref) {
-  var tableData = _ref.data,
+  var data = _ref.data,
       url = _ref.url;
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
@@ -6416,8 +6348,8 @@ var TablesRow = function TablesRow(_ref) {
   }, []); // change to Arry
 
   var getArryList = function getArryList() {
-    for (var i in tableData) {
-      tableArray.push(tableData[i]);
+    for (var i in data) {
+      tableArray.push(data[i]);
     }
 
     setArray(tableArray);
@@ -6430,8 +6362,9 @@ var TablesRow = function TablesRow(_ref) {
       }, i);
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_TablesActionButton__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        eachRowId: tableData.id,
-        url: url
+        eachRowId: data.id,
+        url: url,
+        data: data
       })
     })]
   });
