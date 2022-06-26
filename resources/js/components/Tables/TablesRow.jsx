@@ -7,6 +7,8 @@ const TablesRow = ({ data: tableData, url }) => {
     useEffect(() => {
         getArryList();
     }, []);
+
+    // change to Arry
     const getArryList = () => {
         for (var i in tableData) {
             tableArray.push(tableData[i]);
