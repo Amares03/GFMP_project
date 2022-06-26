@@ -1,49 +1,29 @@
-import React, { Component } from 'react';
-import TablesActionButton from './TablesActionButton';
+import React, { Component, useEffect, useState } from "react";
+import TablesActionButton from "./TablesActionButton";
 
-class TablesRow extends Component {
-    constructor(props){
-        super(props);
-        this.state ={
-            tableData: [],
+const TablesRow = ({ data: tableData, url }) => {
+    const [arry, setArray] = useState([]);
+    const tableArray = [];
+    useEffect(() => {
+        getArryList();
+    }, []);
+    const getArryList = () => {
+        for (var i in tableData) {
+            tableArray.push(tableData[i]);
         }
+        setArray(tableArray);
+    };
 
-    }
-
-
-    // Life cycle Method
-        componentDidMount(){
-            this.getArryList();
-        }
-
-    // change to arry
-    getArryList(){
-        var data = this.props.data;
-            var pdata = []
-            let self = this;
-            for(var i in data){
-                pdata.push(data[i]);
-            }
-            self.setState({
-                tableData: pdata,
-            }) 
-        }
-    
-
-    render(){
-        return(
-            <tr>
-                {
-                this.state.tableData.map(function(x,i){
-                                        return <td key={i}>{x}</td>
-                                    })
-                }
-                <td>
-                    <TablesActionButton eachRowId={this.props.data.id} url={this.props.url}/>
-                </td>
-            </tr>
-        )
-    }
-}
+    return (
+        <tr>
+            {arry.map((a, i) => (
+                <td key={i}>{a}</td>
+            ))}
+            <td>
+                <TablesActionButton eachRowId={tableData.id} url={url} />
+            </td>
+        </tr>
+    );
+};
 
 export default TablesRow;
