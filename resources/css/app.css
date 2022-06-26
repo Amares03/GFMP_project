@@ -1,0 +1,6 @@
+.shaddow {
+    background: rgba(178, 157, 78, 0.2);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(178, 157, 78, 0.1);
+}

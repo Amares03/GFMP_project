@@ -1,8 +1,26 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import { FaUserEdit, FaTrash } from "react-icons/fa";
 import DeleteModal from "../Modals/DeleteModal";
 
 const TablesActionButton = ({ eachRowId, url, data }) => {
+    const [arry, setArray] = useState([]);
+    const tableArray = [];
+
+    const getUserDetails = (id) => {
+        // axios.get(`get/certificate/user/` + id).then((response) => {
+
+        // });
+        console.log(data);
+    };
+    // change it to Array
+    const getArryList = (data) => {
+        for (var i in data) {
+            tableArray.push(data[i]);
+        }
+        setArray(tableArray);
+    };
+
     return (
         <div className="btn-group" role="group">
             {/* <button type="button" className="btn btn-primary">View</button> */}
@@ -10,8 +28,10 @@ const TablesActionButton = ({ eachRowId, url, data }) => {
                 type="button"
                 className="btn btn-info"
                 // data-bs-toggle="modal"
-                // data-bs-target={"#updateModal"+ this.props.eachRowId}
-                // onClick={()=>{this.getUserDetails(this.props.eachRowId,this.props.url)}}
+                // data-bs-target={"#update" + url + "Modal" + eachRowId}
+                onClick={() => {
+                    getUserDetails(eachRowId);
+                }}
             >
                 Update
             </button>

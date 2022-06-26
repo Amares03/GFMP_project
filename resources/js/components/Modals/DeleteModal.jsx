@@ -1,7 +1,8 @@
 import axios from "axios";
-import React, { Component } from "react";
+import React from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import style from "../../../css/app.css";
 
 const DeleteModal = ({ url, modalId }) => {
     // delete function for employee data
@@ -13,7 +14,7 @@ const DeleteModal = ({ url, modalId }) => {
 
     return (
         <div
-            className="modal fade"
+            className={"modal fade shaddow " + style.shaddow}
             id={"delete" + url + "Modal" + modalId}
             tabIndex="-1"
             aria-labelledby="exampleModalLabel"
