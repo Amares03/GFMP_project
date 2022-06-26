@@ -12,7 +12,7 @@ const CertificateTable = () => {
     };
     useEffect(() => {
         getCertificateData();
-    }, []);
+    });
     return (
         <>
             <h4 className="text-left mt-3">Certificate Table</h4>

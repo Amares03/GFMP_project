@@ -8,9 +8,6 @@ const DeleteModal = ({ url, modalId }) => {
     const deleteUserData = (id, url) => {
         axios.delete(`/delete/${url}/data/` + id).then(() => {
             toast.error("User Deleted Successfully");
-            setTimeout(() => {
-                location.reload();
-            }, 2000);
         });
     };
 
