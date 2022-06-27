@@ -9,8 +9,8 @@ class mode_of_payment extends Model
 {
     use HasFactory;
     protected $fillable =[
-        '3_months',
-        '6_months',
+        'months_3',
+        'months_6',
         'amount_of_initial_disposal'
     ];
 }

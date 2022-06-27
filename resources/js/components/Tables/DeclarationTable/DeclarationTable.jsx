@@ -12,10 +12,10 @@ const DeclarationTable = () => {
         });
 
         // react Component life cycle
-        useEffect(() => {
-            getDeclarationData();
-        }, []);
     };
+    useEffect(() => {
+        getDeclarationData();
+    }, []);
     return (
         <>
             <h4 className="text-left mt-3">Declaration Table</h4>

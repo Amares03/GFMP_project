@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('application',200);
             $table->string('payment_period',200);
             $table->tinyInteger('cash');
-            $table->tinyInteger('3_months');
-            $table->tinyInteger('6_months');
+            $table->tinyInteger('months_3');
+            $table->tinyInteger('months_6');
             $table->string('other',100);
             $table->string('monthly_instalment',200);
             $table->string('authorized_signatory',200);

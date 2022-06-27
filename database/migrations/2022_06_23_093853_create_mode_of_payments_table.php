@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('mode_of_payments', function (Blueprint $table) {
             $table->id();
-            $table->tinyInteger('3_months');
-            $table->tinyInteger('6_months');
+            $table->tinyInteger('months_3');
+            $table->tinyInteger('months_6');
             $table->integer('amount_of_initial_disposal');
             $table->timestamps();
         });

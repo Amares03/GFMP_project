@@ -18,9 +18,9 @@ const TablesRow = ({ data, url }) => {
 
     return (
         <tr>
-            {arry.map((a, i) => (
-                <td key={i}>{a}</td>
-            ))}
+            {arry.map((a, i) => {
+                return <td key={i}>{a}</td>;
+            })}
             <td>
                 <TablesActionButton eachRowId={data.id} url={url} data={data} />
             </td>

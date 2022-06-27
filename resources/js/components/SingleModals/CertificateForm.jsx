@@ -1,18 +1,17 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 
 function CertificateForm({ data }) {
     const [inptValue, setInputValue] = useState(data.certificate);
-    const certificateRef = useRef();
+
     const onChange = (event) => {
         const newValue = event.target.value;
         setInputValue(newValue);
-        console.log(certificateRef.current.value);
     };
     return (
         <>
             <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
-                    Upadate User{" "}
+                    Update Certificate User{" "}
                 </h5>
                 <button
                     type="button"
@@ -48,7 +47,9 @@ function CertificateForm({ data }) {
                     type="button"
                     className="btn btn-danger"
                     data-bs-dismiss="modal"
-                    onClick={onChange}
+                    onClick={() => {
+                        console.log("clicked");
+                    }}
                 >
                     Yes
                 </button>
