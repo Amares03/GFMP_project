@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useReducer } from "react";
 import { updateUsers } from "../Modals/UpdateModal";
 
@@ -22,10 +21,6 @@ function CertificateForm({ data, url }) {
         dispatch({ type: currentId, payload: newValue });
     };
 
-    const updateUser = () => {
-        axios.post("update/certificate/user", state).then((response) => {});
-        // console.log(state);
-    };
     return (
         <>
             <div className="modal-header">

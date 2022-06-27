@@ -5665,11 +5665,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _Modals_UpdateModal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Modals/UpdateModal */ "./resources/js/components/Modals/UpdateModal.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Modals_UpdateModal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Modals/UpdateModal */ "./resources/js/components/Modals/UpdateModal.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -5687,7 +5685,6 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 
@@ -5713,7 +5710,7 @@ function CertificateForm(_ref) {
     }
   };
 
-  var _useReducer = (0,react__WEBPACK_IMPORTED_MODULE_1__.useReducer)(reducer, {
+  var _useReducer = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(reducer, {
     id: data.id,
     certificate: data.certificate
   }),
@@ -5730,30 +5727,26 @@ function CertificateForm(_ref) {
     });
   };
 
-  var updateUser = function updateUser() {
-    axios__WEBPACK_IMPORTED_MODULE_0___default().post("update/certificate/user", state).then(function (response) {}); // console.log(state);
-  };
-
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "modal-header",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h5", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h5", {
         className: "modal-title",
         id: "exampleModalLabel",
         children: ["Update Certificate User", " "]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
         type: "button",
         className: "btn-close",
         "data-bs-dismiss": "modal",
         "aria-label": "Close"
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "modal-body",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("form", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("form", {
         className: "form",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "form-group",
-          children: ["Id:", data.id, " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), "Certificate:", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+          children: ["Id:", data.id, " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), "Certificate:", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
             type: "text",
             id: "certificate",
             className: "form-control mb-3",
@@ -5762,17 +5755,17 @@ function CertificateForm(_ref) {
           })]
         })
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "modal-footer",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
         type: "button",
         className: "btn btn-danger",
         "data-bs-dismiss": "modal",
         onClick: function onClick() {
-          (0,_Modals_UpdateModal__WEBPACK_IMPORTED_MODULE_2__.updateUsers)(state, url);
+          (0,_Modals_UpdateModal__WEBPACK_IMPORTED_MODULE_1__.updateUsers)(state, url);
         },
         children: "Yes"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
         type: "button",
         className: "btn btn-secondary",
         "data-bs-dismiss": "modal",
@@ -7270,20 +7263,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-toastify */ "./node_modules/react-toastify/dist/react-toastify.esm.mjs");
-/* harmony import */ var react_toastify_dist_ReactToastify_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-toastify/dist/ReactToastify.css */ "./node_modules/react-toastify/dist/ReactToastify.css");
-/* harmony import */ var _Tables_CertificateTable_CertificateTable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Tables/CertificateTable/CertificateTable */ "./resources/js/components/Tables/CertificateTable/CertificateTable.jsx");
-/* harmony import */ var _Tables_DeclarationTable_DeclarationTable__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Tables/DeclarationTable/DeclarationTable */ "./resources/js/components/Tables/DeclarationTable/DeclarationTable.jsx");
-/* harmony import */ var _Tables_ForOfficeUse_ForOfficeUse__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Tables/ForOfficeUse/ForOfficeUse */ "./resources/js/components/Tables/ForOfficeUse/ForOfficeUse.jsx");
-/* harmony import */ var _Tables_ModeOfPayment_ModeOfPayment__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Tables/ModeOfPayment/ModeOfPayment */ "./resources/js/components/Tables/ModeOfPayment/ModeOfPayment.jsx");
-/* harmony import */ var _Tables_NominatedBeneficiaries_NominatedBeneficiaries__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Tables/NominatedBeneficiaries/NominatedBeneficiaries */ "./resources/js/components/Tables/NominatedBeneficiaries/NominatedBeneficiaries.jsx");
-/* harmony import */ var _Tables_PersonalDetails_PersonalDetails__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Tables/PersonalDetails/PersonalDetails */ "./resources/js/components/Tables/PersonalDetails/PersonalDetails.jsx");
-/* harmony import */ var _Tables_TermsAndConditions_TermsAndConditions__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Tables/TermsAndConditions/TermsAndConditions */ "./resources/js/components/Tables/TermsAndConditions/TermsAndConditions.jsx");
-/* harmony import */ var _Tables_TypesOfProductPurchased_TypesOfProductPurchased__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Tables/TypesOfProductPurchased/TypesOfProductPurchased */ "./resources/js/components/Tables/TypesOfProductPurchased/TypesOfProductPurchased.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
+/* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-toastify */ "./node_modules/react-toastify/dist/react-toastify.esm.mjs");
+/* harmony import */ var react_toastify_dist_ReactToastify_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-toastify/dist/ReactToastify.css */ "./node_modules/react-toastify/dist/ReactToastify.css");
+/* harmony import */ var _Tables_CertificateTable_CertificateTable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Tables/CertificateTable/CertificateTable */ "./resources/js/components/Tables/CertificateTable/CertificateTable.jsx");
+/* harmony import */ var _Tables_DeclarationTable_DeclarationTable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Tables/DeclarationTable/DeclarationTable */ "./resources/js/components/Tables/DeclarationTable/DeclarationTable.jsx");
+/* harmony import */ var _Tables_ForOfficeUse_ForOfficeUse__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Tables/ForOfficeUse/ForOfficeUse */ "./resources/js/components/Tables/ForOfficeUse/ForOfficeUse.jsx");
+/* harmony import */ var _Tables_ModeOfPayment_ModeOfPayment__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Tables/ModeOfPayment/ModeOfPayment */ "./resources/js/components/Tables/ModeOfPayment/ModeOfPayment.jsx");
+/* harmony import */ var _Tables_NominatedBeneficiaries_NominatedBeneficiaries__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Tables/NominatedBeneficiaries/NominatedBeneficiaries */ "./resources/js/components/Tables/NominatedBeneficiaries/NominatedBeneficiaries.jsx");
+/* harmony import */ var _Tables_PersonalDetails_PersonalDetails__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Tables/PersonalDetails/PersonalDetails */ "./resources/js/components/Tables/PersonalDetails/PersonalDetails.jsx");
+/* harmony import */ var _Tables_TermsAndConditions_TermsAndConditions__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Tables/TermsAndConditions/TermsAndConditions */ "./resources/js/components/Tables/TermsAndConditions/TermsAndConditions.jsx");
+/* harmony import */ var _Tables_TypesOfProductPurchased_TypesOfProductPurchased__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Tables/TypesOfProductPurchased/TypesOfProductPurchased */ "./resources/js/components/Tables/TypesOfProductPurchased/TypesOfProductPurchased.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
@@ -7299,13 +7289,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Table = function Table() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
     className: "container",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_toastify__WEBPACK_IMPORTED_MODULE_2__.ToastContainer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_toastify__WEBPACK_IMPORTED_MODULE_1__.ToastContainer, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
       className: "row justify-content-center",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
         className: "col-md-8",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_Tables_CertificateTable_CertificateTable__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_Tables_DeclarationTable_DeclarationTable__WEBPACK_IMPORTED_MODULE_5__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_Tables_ForOfficeUse_ForOfficeUse__WEBPACK_IMPORTED_MODULE_6__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_Tables_ModeOfPayment_ModeOfPayment__WEBPACK_IMPORTED_MODULE_7__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_Tables_NominatedBeneficiaries_NominatedBeneficiaries__WEBPACK_IMPORTED_MODULE_8__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_Tables_PersonalDetails_PersonalDetails__WEBPACK_IMPORTED_MODULE_9__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_Tables_TermsAndConditions_TermsAndConditions__WEBPACK_IMPORTED_MODULE_10__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_Tables_TypesOfProductPurchased_TypesOfProductPurchased__WEBPACK_IMPORTED_MODULE_11__["default"], {})]
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Tables_CertificateTable_CertificateTable__WEBPACK_IMPORTED_MODULE_3__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Tables_DeclarationTable_DeclarationTable__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Tables_ForOfficeUse_ForOfficeUse__WEBPACK_IMPORTED_MODULE_5__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Tables_ModeOfPayment_ModeOfPayment__WEBPACK_IMPORTED_MODULE_6__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Tables_NominatedBeneficiaries_NominatedBeneficiaries__WEBPACK_IMPORTED_MODULE_7__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Tables_PersonalDetails_PersonalDetails__WEBPACK_IMPORTED_MODULE_8__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Tables_TermsAndConditions_TermsAndConditions__WEBPACK_IMPORTED_MODULE_9__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_Tables_TypesOfProductPurchased_TypesOfProductPurchased__WEBPACK_IMPORTED_MODULE_10__["default"], {})]
       })
     })]
   });
