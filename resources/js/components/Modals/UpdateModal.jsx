@@ -3,6 +3,7 @@ import React from "react";
 import style from "../../../css/app.css";
 import CertificateForm from "../SingleModals/CertificateForm";
 import DeclarationForm from "../SingleModals/DeclarationForm";
+import ForOfficeUseForm from "../SingleModals/ForOfficeUseForm";
 
 const UpdateModal = ({ url, modalId, data }) => {
     const getForms = () => {
@@ -10,6 +11,8 @@ const UpdateModal = ({ url, modalId, data }) => {
             return <CertificateForm modalId={modalId} url={url} data={data} />;
         } else if (url === "declaration") {
             return <DeclarationForm modalId={modalId} url={url} data={data} />;
+        } else if (url === "for_office_use") {
+            return <ForOfficeUseForm modalId={modalId} url={url} data={data} />;
         }
     };
     return (

@@ -1,6 +1,6 @@
 import React, { useReducer } from "react";
 
-const ForOfficeUseForm = () => {
+const ForOfficeUseForm = ({ data }) => {
     const reducer = (state, action, value) => {
         const x = toString(action.type);
         return { x: value };

@@ -25,9 +25,7 @@ const CertificateTable = () => {
                         <th scope="col" width="100px">
                             Certificate
                         </th>
-                        <th scope="col" width="100px">
-                            Actions
-                        </th>
+                        <th scope="col" width="100px"></th>
                     </tr>
                 </thead>
                 <tbody>
