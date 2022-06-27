@@ -2,17 +2,18 @@ import axios from "axios";
 import React, { useState } from "react";
 import { FaUserEdit, FaTrash } from "react-icons/fa";
 import DeleteModal from "../Modals/DeleteModal";
+import UpdateModal from "../Modals/UpdateModal";
 
 const TablesActionButton = ({ eachRowId, url, data }) => {
     const [arry, setArray] = useState([]);
     const tableArray = [];
 
-    const getUserDetails = (id) => {
-        // axios.get(`get/certificate/user/` + id).then((response) => {
+    // const getUserDetails = (id) => {
+    //     // axios.get(`get/certificate/user/` + id).then((response) => {
 
-        // });
-        console.log(data);
-    };
+    //     // });
+    //     console.log(data);
+    // };
     // change it to Array
     const getArryList = (data) => {
         for (var i in data) {
@@ -27,14 +28,12 @@ const TablesActionButton = ({ eachRowId, url, data }) => {
             <button
                 type="button"
                 className="btn btn-info"
-                // data-bs-toggle="modal"
-                // data-bs-target={"#update" + url + "Modal" + eachRowId}
-                onClick={() => {
-                    getUserDetails(eachRowId);
-                }}
+                data-bs-toggle="modal"
+                data-bs-target={"#update" + url + "Modal" + eachRowId}
             >
                 Update
             </button>
+            <UpdateModal modalId={eachRowId} url={url} data={data} />
 
             <button
                 type="button"
