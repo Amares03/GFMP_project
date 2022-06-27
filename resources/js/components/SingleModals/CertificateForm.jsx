@@ -1,11 +1,37 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useReducer } from "react";
 
 function CertificateForm({ data }) {
-    const [inptValue, setInputValue] = useState(data.certificate);
+    const reducer = (state, action) => {
+        switch (action.type) {
+            case "certificate":
+                return { ...state, certificate: action.payload };
+            default:
+                return { state };
+        }
+    };
+    const [state, dispatch] = useReducer(reducer, {
+        id: data.id,
+        certificate: data.certificate,
+    });
 
     const onChange = (event) => {
         const newValue = event.target.value;
-        setInputValue(newValue);
+        const currentId = event.target.id;
+        dispatch({ type: currentId, payload: newValue });
+        // console.log(event.target);
+    };
+
+    const updateUser = () => {
+        axios
+            .post("update/certificate/user", {
+                id: state.id,
+                certificate: state.certificate,
+            })
+            .then((response) => {
+                console.log(response);
+            });
+        console.log(state);
     };
     return (
         <>
@@ -24,19 +50,12 @@ function CertificateForm({ data }) {
                 <form className="form">
                     <div className="form-group">
                         Id:{data.id} <br />
-                        {/* <input
-                    type="text"
-                    id={data.id}
-                    className="form-control mb-3"
-                    value={data.id}
-                    onChange={onChange}
-                /> */}
                         Certificate:{" "}
                         <input
                             type="text"
                             id="certificate"
                             className="form-control mb-3"
-                            value={inptValue}
+                            value={state.certificate}
                             onChange={onChange}
                         />
                     </div>
@@ -48,7 +67,7 @@ function CertificateForm({ data }) {
                     className="btn btn-danger"
                     data-bs-dismiss="modal"
                     onClick={() => {
-                        console.log("clicked");
+                        updateUser();
                     }}
                 >
                     Yes

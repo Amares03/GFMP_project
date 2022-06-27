@@ -13,6 +13,8 @@ const TablesRow = ({ data, url }) => {
         for (var i in data) {
             tableArray.push(data[i]);
         }
+        tableArray.pop();
+        tableArray.pop();
         setArray(tableArray);
     };
 

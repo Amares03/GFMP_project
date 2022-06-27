@@ -169,17 +169,20 @@ class AllController extends Controller
 
     //UPDATE USERS
     //update certificate user
-     public function updateCertificateUser(certificate_link $request){
+     public function updateCertificateUser(Request $request){
         try {
             $id = $request->get('id');
             $certificate = $request->get('certificate');
            
 
-              $list = Employee::where('id',$id)->update([
+              $list = certificate_link::where('id',$id)->update([
                 'certificate' => $certificate,
             ]);
 
-            return response()->json($list);
+            return response()->json([
+                'id'=>$id,
+                'certificate'=>$certificate
+            ]);
 
         } catch (Exception $e) {
             Log::error($e);
