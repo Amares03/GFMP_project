@@ -4,6 +4,11 @@ import style from "../../../css/app.css";
 import CertificateForm from "../SingleModals/CertificateForm";
 import DeclarationForm from "../SingleModals/DeclarationForm";
 import ForOfficeUseForm from "../SingleModals/ForOfficeUseForm";
+import ModeOfPaymentForm from "../SingleModals/ModeOfPaymentForm";
+import NominatedBeneficiariesForm from "../SingleModals/NominatedBeneficiariesForm";
+import PersonalDetailsForm from "../SingleModals/PersonalDetailsForm";
+import TermsAndConditionsForm from "../SingleModals/TermsAndConditionsForm";
+import TypesOfProductPurchasedForm from "../SingleModals/TypesOfProductPurchasedForm";
 
 const UpdateModal = ({ url, modalId, data }) => {
     const getForms = () => {
@@ -13,6 +18,38 @@ const UpdateModal = ({ url, modalId, data }) => {
             return <DeclarationForm modalId={modalId} url={url} data={data} />;
         } else if (url === "for_office_use") {
             return <ForOfficeUseForm modalId={modalId} url={url} data={data} />;
+        } else if (url === "mode_of_payment") {
+            return (
+                <ModeOfPaymentForm modalId={modalId} url={url} data={data} />
+            );
+        } else if (url === "nominated_beneficiaries") {
+            return (
+                <NominatedBeneficiariesForm
+                    modalId={modalId}
+                    url={url}
+                    data={data}
+                />
+            );
+        } else if (url === "personal_details") {
+            return (
+                <PersonalDetailsForm modalId={modalId} url={url} data={data} />
+            );
+        } else if (url === "terms_and_conditions") {
+            return (
+                <TermsAndConditionsForm
+                    modalId={modalId}
+                    url={url}
+                    data={data}
+                />
+            );
+        } else if (url === "types_of_product_purchased") {
+            return (
+                <TypesOfProductPurchasedForm
+                    modalId={modalId}
+                    url={url}
+                    data={data}
+                />
+            );
         }
     };
     return (

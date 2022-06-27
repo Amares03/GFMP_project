@@ -166,4 +166,23 @@ class AllController extends Controller
             Log::error($e);
         }
     }
+
+    //UPDATE USERS
+    //update certificate user
+     public function updateCertificateUser(certificate_link $request){
+        try {
+            $id = $request->get('id');
+            $certificate = $request->get('certificate');
+           
+
+              $list = Employee::where('id',$id)->update([
+                'certificate' => $certificate,
+            ]);
+
+            return response()->json($list);
+
+        } catch (Exception $e) {
+            Log::error($e);
+        }
+     }
 }
