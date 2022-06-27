@@ -10,6 +10,9 @@ import PersonalDetailsForm from "../SingleModals/PersonalDetailsForm";
 import TermsAndConditionsForm from "../SingleModals/TermsAndConditionsForm";
 import TypesOfProductPurchasedForm from "../SingleModals/TypesOfProductPurchasedForm";
 
+export const updateUsers = (state, url) => {
+    axios.post(`update/${url}/user`, state).then((response) => {});
+};
 const UpdateModal = ({ url, modalId, data }) => {
     const getForms = () => {
         if (url === "certificate") {
@@ -52,6 +55,7 @@ const UpdateModal = ({ url, modalId, data }) => {
             );
         }
     };
+
     return (
         <div
             className={"modal fade shaddow " + style.shaddow}

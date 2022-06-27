@@ -1,7 +1,8 @@
 import axios from "axios";
 import React, { useReducer } from "react";
+import { updateUsers } from "../Modals/UpdateModal";
 
-function CertificateForm({ data }) {
+function CertificateForm({ data, url }) {
     const reducer = (state, action) => {
         switch (action.type) {
             case "certificate":
@@ -19,19 +20,11 @@ function CertificateForm({ data }) {
         const newValue = event.target.value;
         const currentId = event.target.id;
         dispatch({ type: currentId, payload: newValue });
-        // console.log(event.target);
     };
 
     const updateUser = () => {
-        axios
-            .post("update/certificate/user", {
-                id: state.id,
-                certificate: state.certificate,
-            })
-            .then((response) => {
-                console.log(response);
-            });
-        console.log(state);
+        axios.post("update/certificate/user", state).then((response) => {});
+        // console.log(state);
     };
     return (
         <>
@@ -67,7 +60,7 @@ function CertificateForm({ data }) {
                     className="btn btn-danger"
                     data-bs-dismiss="modal"
                     onClick={() => {
-                        updateUser();
+                        updateUsers(state, url);
                     }}
                 >
                     Yes

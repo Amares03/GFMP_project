@@ -1,19 +1,30 @@
 import React, { useReducer } from "react";
+import { updateUsers } from "../Modals/UpdateModal";
 
-const ModeOfPaymentForm = ({ data }) => {
-    const reducer = (state, action, value) => {
-        const x = toString(action.type);
-        return { x: value };
+const ModeOfPaymentForm = ({ data, url }) => {
+    const reducer = (state, action) => {
+        switch (action.type) {
+            case "months_3":
+                return { ...state, months_3: action.payload };
+            case "months_6":
+                return { ...state, months_6: action.payload };
+            case "amount_of_initial_disposal":
+                return { ...state, amount_of_initial_disposal: action.payload };
+            default:
+                return { state };
+        }
     };
 
     const [state, dispatch] = useReducer(reducer, {
+        id: data.id,
         months_3: data.months_3,
         months_6: data.months_6,
         amount_of_initial_disposal: data.amount_of_initial_disposal,
     });
     const onChange = (event) => {
         const newValue = event.target.value;
-        dispatch({ type: newValue });
+        const currentId = event.target.id;
+        dispatch({ type: currentId, payload: newValue });
     };
     return (
         <>
@@ -71,7 +82,7 @@ const ModeOfPaymentForm = ({ data }) => {
                     className="btn btn-danger"
                     data-bs-dismiss="modal"
                     onClick={() => {
-                        console.log("clicked");
+                        updateUsers(state, url);
                     }}
                 >
                     Yes

@@ -1,12 +1,33 @@
 import React, { useReducer } from "react";
+import { updateUsers } from "../Modals/UpdateModal";
 
-const TypesOfProductPurchasedForm = ({ data }) => {
-    const reducer = (state, action, value) => {
-        const x = toString(action.type);
-        return { x: value };
+const TypesOfProductPurchasedForm = ({ data, url }) => {
+    const reducer = (state, action) => {
+        switch (action.type) {
+            case "glen_forest_memorial_park":
+                return { ...state, glen_forest_memorial_park: action.payload };
+            case "chemhute_park":
+                return { ...state, chemhute_park: action.payload };
+            case "matidoda_park":
+                return { ...state, matidoda_park: action.payload };
+            case "single_unit":
+                return { ...state, single_unit: action.payload };
+            case "double_unit":
+                return { ...state, double_unit: action.payload };
+            case "triple_unit":
+                return { ...state, triple_unit: action.payload };
+            case "family_close":
+                return { ...state, family_close: action.payload };
+            case "other_detail":
+                return { ...state, other_detail: action.payload };
+
+            default:
+                return { state };
+        }
     };
 
     const [state, dispatch] = useReducer(reducer, {
+        id: data.id,
         glen_forest_memorial_park: data.glen_forest_memorial_park,
         chemhute_park: data.chemhute_park,
         matidoda_park: data.matidoda_park,
@@ -18,7 +39,8 @@ const TypesOfProductPurchasedForm = ({ data }) => {
     });
     const onChange = (event) => {
         const newValue = event.target.value;
-        dispatch({ type: newValue });
+        const currentId = event.target.id;
+        dispatch({ type: currentId, payload: newValue });
     };
     return (
         <>
@@ -126,7 +148,7 @@ const TypesOfProductPurchasedForm = ({ data }) => {
                     className="btn btn-danger"
                     data-bs-dismiss="modal"
                     onClick={() => {
-                        console.log("clicked");
+                        updateUsers(state, url);
                     }}
                 >
                     Yes

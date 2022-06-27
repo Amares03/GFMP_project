@@ -1,12 +1,42 @@
 import React, { useReducer } from "react";
+import { updateUsers } from "../Modals/UpdateModal";
 
-const PersonalDetailsForm = ({ data }) => {
-    const reducer = (state, action, value) => {
-        const x = toString(action.type);
-        return { x: value };
+const PersonalDetailsForm = ({ data, url }) => {
+    const reducer = (state, action) => {
+        switch (action.type) {
+            case "surname":
+                return { ...state, surname: action.payload };
+            case "first_name":
+                return { ...state, first_name: action.payload };
+            case "date":
+                return { ...state, date: action.payload };
+            case "martial_status":
+                return { ...state, martial_status: action.payload };
+            case "name_of_spouse":
+                return { ...state, name_of_spouse: action.payload };
+            case "physical_address":
+                return { ...state, physical_address: action.payload };
+            case "postal_address":
+                return { ...state, postal_address: action.payload };
+            case "employer":
+                return { ...state, employer: action.payload };
+            case "occupation":
+                return { ...state, occupation: action.payload };
+            case "tel_no_home":
+                return { ...state, tel_no_home: action.payload };
+            case "cell":
+                return { ...state, cell: action.payload };
+            case "tel_no_business":
+                return { ...state, tel_no_business: action.payload };
+            case "email":
+                return { ...state, email: action.payload };
+            default:
+                return { state };
+        }
     };
 
     const [state, dispatch] = useReducer(reducer, {
+        id: data.id,
         surname: data.surname,
         first_name: data.first_name,
         date: data.date,
@@ -23,7 +53,8 @@ const PersonalDetailsForm = ({ data }) => {
     });
     const onChange = (event) => {
         const newValue = event.target.value;
-        dispatch({ type: newValue });
+        const currentId = event.target.id;
+        dispatch({ type: currentId, payload: newValue });
     };
     return (
         <>
@@ -181,7 +212,7 @@ const PersonalDetailsForm = ({ data }) => {
                     className="btn btn-danger"
                     data-bs-dismiss="modal"
                     onClick={() => {
-                        console.log("clicked");
+                        updateUsers(state, url);
                     }}
                 >
                     Yes

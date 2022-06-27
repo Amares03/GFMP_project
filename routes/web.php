@@ -43,6 +43,13 @@ Route::delete('delete/types_of_product_purchased/data/{id}',[AllController::clas
 
 
 Route::post('update/certificate/user',[AllController::class, 'updateCertificateUser'])->name('certificate.update');
+Route::post('update/declaration/user',[AllController::class, 'updateDeclarationUser'])->name('declaration.update');
+Route::post('update/for_office_use/user',[AllController::class, 'updateForOfficeUseUser'])->name('for_office_use.update');
+Route::post('update/mode_of_payment/user',[AllController::class, 'updateModeOfPaymentUser'])->name('mode_of_payment.update');
+Route::post('update/nominated_beneficiaries/user',[AllController::class, 'updateNominatedBeneficiariesUser'])->name('nominated_beneficiaries.update');
+Route::post('update/personal_details/user',[AllController::class, 'updatePersonalDetailsUser'])->name('personal_details.update');
+Route::post('update/terms_and_conditions/user',[AllController::class, 'updateTermsAndConditionsUser'])->name('terms_and_conditions.update');
+Route::post('update/types_of_product_purchased/user',[AllController::class, 'updateTypesOfProductPurchasedUser'])->name('types_of_product_purchased.update');
 
 
 

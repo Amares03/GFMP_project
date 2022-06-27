@@ -1,11 +1,29 @@
 import React, { useReducer } from "react";
+import { updateUsers } from "../Modals/UpdateModal";
 
-const DeclarationForm = ({ data }) => {
-    const reducer = (state, action, value) => {
-        const x = toString(action.type);
-        return { x: value };
+const DeclarationForm = ({ data, url }) => {
+    const reducer = (state, action) => {
+        switch (action.type) {
+            case "Blank1":
+                return { ...state, Blank1: action.payload };
+            case "Blank2":
+                return { ...state, Blank2: action.payload };
+            case "Blank3":
+                return { ...state, Blank3: action.payload };
+            case "Blank4":
+                return { ...state, Blank4: action.payload };
+            case "Blank5":
+                return { ...state, Blank5: action.payload };
+            case "Blank6":
+                return { ...state, Blank6: action.payload };
+            case "Blank7":
+                return { ...state, Blank7: action.payload };
+            default:
+                return { state };
+        }
     };
     const [state, dispatch] = useReducer(reducer, {
+        id: data.id,
         Blank1: data.Blank1,
         Blank2: data.Blank2,
         Blank3: data.Blank3,
@@ -17,7 +35,8 @@ const DeclarationForm = ({ data }) => {
 
     const onChange = (event) => {
         const newValue = event.target.value;
-        dispatch({ type: newValue });
+        const currentId = event.target.id;
+        dispatch({ type: currentId, payload: newValue });
     };
     return (
         <>
@@ -115,7 +134,7 @@ const DeclarationForm = ({ data }) => {
                     className="btn btn-danger"
                     data-bs-dismiss="modal"
                     onClick={() => {
-                        console.log("clicked");
+                        updateUsers(state, url);
                     }}
                 >
                     Yes

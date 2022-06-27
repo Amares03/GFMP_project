@@ -1,19 +1,33 @@
 import React, { useReducer } from "react";
+import { updateUsers } from "../Modals/UpdateModal";
 
-const NominatedBeneficiariesForm = ({ data }) => {
-    const reducer = (state, action, value) => {
-        const x = toString(action.type);
-        return { x: value };
+const NominatedBeneficiariesForm = ({ data, url }) => {
+    const reducer = (state, action) => {
+        switch (action.type) {
+            case "name":
+                return { ...state, name: action.payload };
+            case "age":
+                return { ...state, age: action.payload };
+            case "relationship":
+                return {
+                    ...state,
+                    relationship: action.payload,
+                };
+            default:
+                return { state };
+        }
     };
 
     const [state, dispatch] = useReducer(reducer, {
+        id: data.id,
         name: data.name,
         age: data.age,
         relationship: data.relationship,
     });
     const onChange = (event) => {
         const newValue = event.target.value;
-        dispatch({ type: newValue });
+        const currentId = event.target.id;
+        dispatch({ type: currentId, payload: newValue });
     };
     return (
         <>
@@ -71,7 +85,7 @@ const NominatedBeneficiariesForm = ({ data }) => {
                     className="btn btn-danger"
                     data-bs-dismiss="modal"
                     onClick={() => {
-                        console.log("clicked");
+                        updateUsers(state, url);
                     }}
                 >
                     Yes

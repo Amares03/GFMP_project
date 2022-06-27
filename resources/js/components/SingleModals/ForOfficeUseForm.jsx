@@ -1,12 +1,34 @@
 import React, { useReducer } from "react";
+import { updateUsers } from "../Modals/UpdateModal";
 
-const ForOfficeUseForm = ({ data }) => {
-    const reducer = (state, action, value) => {
-        const x = toString(action.type);
-        return { x: value };
+const ForOfficeUseForm = ({ data, url }) => {
+    const reducer = (state, action) => {
+        switch (action.type) {
+            case "application":
+                return { ...state, application: action.payload };
+            case "payment_period":
+                return { ...state, payment_period: action.payload };
+            case "cash":
+                return { ...state, cash: action.payload };
+            case "months_3":
+                return { ...state, months_3: action.payload };
+            case "months_6":
+                return { ...state, months_6: action.payload };
+            case "other":
+                return { ...state, other: action.payload };
+            case "monthly_instalment":
+                return { ...state, monthly_instalment: action.payload };
+            case "authorized_signatory":
+                return { ...state, authorized_signatory: action.payload };
+            case "plot_number":
+                return { ...state, plot_number: action.payload };
+            default:
+                return { state };
+        }
     };
 
     const [state, dispatch] = useReducer(reducer, {
+        id: data.id,
         application: data.application,
         payment_period: data.payment_period,
         cash: data.cash,
@@ -19,7 +41,8 @@ const ForOfficeUseForm = ({ data }) => {
     });
     const onChange = (event) => {
         const newValue = event.target.value;
-        dispatch({ type: newValue });
+        const currentId = event.target.id;
+        dispatch({ type: currentId, payload: newValue });
     };
     return (
         <>
@@ -137,7 +160,7 @@ const ForOfficeUseForm = ({ data }) => {
                     className="btn btn-danger"
                     data-bs-dismiss="modal"
                     onClick={() => {
-                        console.log("clicked");
+                        updateUsers(state, url);
                     }}
                 >
                     Yes
