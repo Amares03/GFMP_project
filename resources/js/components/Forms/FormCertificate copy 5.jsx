@@ -21,6 +21,7 @@ const FormCertificate = ({ dispatch, state, show }) => {
                     type="text"
                     id="certificate"
                     className="form-control mb-3"
+                    // value={show ? state.certificate : ""}
                     value={state.certificate}
                     onChange={onChange}
                 />
