@@ -41,7 +41,7 @@ const FormForOfficeUse = ({ dispatch, state, show }) => {
                 <div className="row">
                     cash:{" "}
                     <input
-                        type="text"
+                        type="number"
                         id="cash"
                         className="form-control mb-3"
                         value={state.cash}
@@ -51,7 +51,7 @@ const FormForOfficeUse = ({ dispatch, state, show }) => {
                 <div className="row">
                     months_3:{" "}
                     <input
-                        type="text"
+                        type="number"
                         id="months_3"
                         className="form-control mb-3"
                         value={state.months_3}
@@ -61,7 +61,7 @@ const FormForOfficeUse = ({ dispatch, state, show }) => {
                 <div className="row">
                     months_6:{" "}
                     <input
-                        type="text"
+                        type="number"
                         id="months_6"
                         className="form-control mb-3"
                         value={state.months_6}
@@ -101,7 +101,7 @@ const FormForOfficeUse = ({ dispatch, state, show }) => {
                 <div className="row">
                     plot_number:{" "}
                     <input
-                        type="text"
+                        type="number"
                         id="plot_number"
                         className="form-control mb-3"
                         value={state.plot_number}

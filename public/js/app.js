@@ -5506,9 +5506,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _FormCertificate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FormCertificate */ "./resources/js/components/Forms/FormCertificate.jsx");
-/* harmony import */ var _Reducers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Reducers */ "./resources/js/components/Reducers.jsx");
-/* harmony import */ var _FormDeclaration__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./FormDeclaration */ "./resources/js/components/Forms/FormDeclaration.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _FormForOfficeUse__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FormForOfficeUse */ "./resources/js/components/Forms/FormForOfficeUse.jsx");
+/* harmony import */ var _FormModeOfPayment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./FormModeOfPayment */ "./resources/js/components/Forms/FormModeOfPayment.jsx");
+/* harmony import */ var _FormNominatedBeneficiaries__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./FormNominatedBeneficiaries */ "./resources/js/components/Forms/FormNominatedBeneficiaries.jsx");
+/* harmony import */ var _FormPersonalDetails__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./FormPersonalDetails */ "./resources/js/components/Forms/FormPersonalDetails.jsx");
+/* harmony import */ var _FormTermsAndConditions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./FormTermsAndConditions */ "./resources/js/components/Forms/FormTermsAndConditions.jsx");
+/* harmony import */ var _FormTypesOfProductPurchased__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./FormTypesOfProductPurchased */ "./resources/js/components/Forms/FormTypesOfProductPurchased.jsx");
+/* harmony import */ var _Reducers__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Reducers */ "./resources/js/components/Reducers.jsx");
+/* harmony import */ var _FormDeclaration__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./FormDeclaration */ "./resources/js/components/Forms/FormDeclaration.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -5528,18 +5534,25 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
+
+
+
+
+
 var CreateForm = function CreateForm(_ref) {
   var setShowForm = _ref.setShowForm;
 
-  var _useReducer = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(_Reducers__WEBPACK_IMPORTED_MODULE_2__.certificateReducer, {
+  // certificate
+  var _useReducer = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(_Reducers__WEBPACK_IMPORTED_MODULE_8__.certificateReducer, {
     certificate: ""
   }),
       _useReducer2 = _slicedToArray(_useReducer, 2),
       certificateState = _useReducer2[0],
-      certificateDispatch = _useReducer2[1]; // Declaration
+      certificateDispatch = _useReducer2[1]; // declaration
 
 
-  var _useReducer3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(_Reducers__WEBPACK_IMPORTED_MODULE_2__.declarationReducer, {
+  var _useReducer3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(_Reducers__WEBPACK_IMPORTED_MODULE_8__.declarationReducer, {
     Blank1: "",
     Blank2: "",
     Blank3: "",
@@ -5549,25 +5562,172 @@ var CreateForm = function CreateForm(_ref) {
     Blank7: ""
   }),
       _useReducer4 = _slicedToArray(_useReducer3, 2),
-      DeclarationState = _useReducer4[0],
-      DeclarationDispatch = _useReducer4[1];
+      declarationState = _useReducer4[0],
+      declarationDispatch = _useReducer4[1]; // forOfficeUse
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+
+  var _useReducer5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(_Reducers__WEBPACK_IMPORTED_MODULE_8__.forOfficeUseReducer, {
+    application: "",
+    payment_period: "",
+    cash: 0,
+    months_3: 0,
+    months_6: 0,
+    other: "",
+    monthly_instalment: "",
+    authorized_signatory: "",
+    plot_number: 0
+  }),
+      _useReducer6 = _slicedToArray(_useReducer5, 2),
+      forOfficeUseState = _useReducer6[0],
+      forOfficeUseDispatch = _useReducer6[1]; // modeOfPayment
+
+
+  var _useReducer7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(_Reducers__WEBPACK_IMPORTED_MODULE_8__.modeOfPaymentReducer, {
+    months_3: 0,
+    months_6: 0,
+    amount_of_initial_disposal: 0
+  }),
+      _useReducer8 = _slicedToArray(_useReducer7, 2),
+      modeOfPaymentState = _useReducer8[0],
+      modeOfPaymentDispatch = _useReducer8[1]; // nominatedBeneficiaries
+
+
+  var _useReducer9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(_Reducers__WEBPACK_IMPORTED_MODULE_8__.nominatedBeneficiariesReducer, {
+    name: "",
+    age: 0,
+    relationship: ""
+  }),
+      _useReducer10 = _slicedToArray(_useReducer9, 2),
+      nominatedBeneficiariesState = _useReducer10[0],
+      nominatedBeneficiariesDispatch = _useReducer10[1]; // personalDetails
+
+
+  var _useReducer11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(_Reducers__WEBPACK_IMPORTED_MODULE_8__.personalDetailsReducer, {
+    surname: "",
+    first_name: "",
+    date: new Date(),
+    martial_status: "",
+    name_of_spouse: "",
+    physical_address: "",
+    postal_address: "",
+    employer: "",
+    occupation: "",
+    tel_no_home: "",
+    cell: "",
+    tel_no_business: "",
+    email: ""
+  }),
+      _useReducer12 = _slicedToArray(_useReducer11, 2),
+      personalDetailsState = _useReducer12[0],
+      personalDetailsDispatch = _useReducer12[1]; // termsAndConditions
+
+
+  var _useReducer13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(_Reducers__WEBPACK_IMPORTED_MODULE_8__.termsAndConditionsReducer, {
+    terms_table: ""
+  }),
+      _useReducer14 = _slicedToArray(_useReducer13, 2),
+      termsAndConditionsState = _useReducer14[0],
+      termsAndConditionsDispatch = _useReducer14[1]; // typesOfProductPurchased
+
+
+  var _useReducer15 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(_Reducers__WEBPACK_IMPORTED_MODULE_8__.typesOfProductPurchasedReducer, {
+    glen_forest_memorial_park: 0,
+    chemhute_park: 0,
+    matidoda_park: 0,
+    single_unit: 0,
+    double_unit: 0,
+    triple_unit: 0,
+    family_close: 0,
+    other_detail: 0
+  }),
+      _useReducer16 = _slicedToArray(_useReducer15, 2),
+      typesOfProductPurchasedState = _useReducer16[0],
+      typesOfProductPurchasedDispatch = _useReducer16[1];
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
     className: "container",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_FormCertificate__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      dispatch: certificateDispatch,
-      state: certificateState,
-      show: false
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_FormDeclaration__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      dispatch: DeclarationDispatch,
-      state: DeclarationState,
-      show: false
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-      className: "btn btn-danger",
-      onClick: function onClick() {
-        setShowForm(false);
-      },
-      children: "cancel"
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+      className: "row",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+        className: "col",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_FormCertificate__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          dispatch: certificateDispatch,
+          state: certificateState,
+          show: false
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+        className: "col",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_FormDeclaration__WEBPACK_IMPORTED_MODULE_9__["default"], {
+          dispatch: declarationDispatch,
+          state: declarationState,
+          show: false
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+        className: "col",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_FormForOfficeUse__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          dispatch: forOfficeUseDispatch,
+          state: forOfficeUseState,
+          show: false
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+        className: "col",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_FormModeOfPayment__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          dispatch: modeOfPaymentDispatch,
+          state: modeOfPaymentState,
+          show: false
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+      className: "row",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+        className: "col",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_FormNominatedBeneficiaries__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          dispatch: nominatedBeneficiariesDispatch,
+          state: nominatedBeneficiariesState,
+          show: false
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+        className: "col",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_FormPersonalDetails__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          dispatch: personalDetailsDispatch,
+          state: personalDetailsState,
+          show: false
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+        className: "col",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_FormTermsAndConditions__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          dispatch: termsAndConditionsDispatch,
+          state: termsAndConditionsState,
+          show: false
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+        className: "col",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_FormTypesOfProductPurchased__WEBPACK_IMPORTED_MODULE_7__["default"], {
+          dispatch: typesOfProductPurchasedDispatch,
+          state: typesOfProductPurchasedState,
+          show: false
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+      className: "row",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+        className: "col",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("button", {
+          className: "btn btn-danger",
+          onClick: function onClick() {
+            setShowForm(false);
+          },
+          children: "cancel"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+        className: "col",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("button", {
+          className: "btn btn-info",
+          children: "Submit"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+        className: "col"
+      })]
     })]
   });
 };
@@ -5804,7 +5964,7 @@ var FormForOfficeUse = function FormForOfficeUse(_ref) {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
         className: "row",
         children: ["cash:", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-          type: "text",
+          type: "number",
           id: "cash",
           className: "form-control mb-3",
           value: state.cash,
@@ -5813,7 +5973,7 @@ var FormForOfficeUse = function FormForOfficeUse(_ref) {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
         className: "row",
         children: ["months_3:", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-          type: "text",
+          type: "number",
           id: "months_3",
           className: "form-control mb-3",
           value: state.months_3,
@@ -5822,7 +5982,7 @@ var FormForOfficeUse = function FormForOfficeUse(_ref) {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
         className: "row",
         children: ["months_6:", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-          type: "text",
+          type: "number",
           id: "months_6",
           className: "form-control mb-3",
           value: state.months_6,
@@ -5858,7 +6018,7 @@ var FormForOfficeUse = function FormForOfficeUse(_ref) {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
         className: "row",
         children: ["plot_number:", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-          type: "text",
+          type: "number",
           id: "plot_number",
           className: "form-control mb-3",
           value: state.plot_number,
