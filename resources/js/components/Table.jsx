@@ -16,7 +16,7 @@ const Table = () => {
     return (
         <>
             {showForm ? (
-                <CreateForm />
+                <CreateForm setShowForm={setShowForm} />
             ) : (
                 <button
                     className="btn btn-info"
