@@ -1,41 +1,8 @@
 import React, { useReducer } from "react";
-import { updateUsers } from "../Modals/UpdateModal";
-
+import FormButtons from "../FormButtons";
+import { personalDetailsReducer } from "../Reducers";
 const PersonalDetailsForm = ({ data, url }) => {
-    const reducer = (state, action) => {
-        switch (action.type) {
-            case "surname":
-                return { ...state, surname: action.payload };
-            case "first_name":
-                return { ...state, first_name: action.payload };
-            case "date":
-                return { ...state, date: action.payload };
-            case "martial_status":
-                return { ...state, martial_status: action.payload };
-            case "name_of_spouse":
-                return { ...state, name_of_spouse: action.payload };
-            case "physical_address":
-                return { ...state, physical_address: action.payload };
-            case "postal_address":
-                return { ...state, postal_address: action.payload };
-            case "employer":
-                return { ...state, employer: action.payload };
-            case "occupation":
-                return { ...state, occupation: action.payload };
-            case "tel_no_home":
-                return { ...state, tel_no_home: action.payload };
-            case "cell":
-                return { ...state, cell: action.payload };
-            case "tel_no_business":
-                return { ...state, tel_no_business: action.payload };
-            case "email":
-                return { ...state, email: action.payload };
-            default:
-                return { state };
-        }
-    };
-
-    const [state, dispatch] = useReducer(reducer, {
+    const [state, dispatch] = useReducer(personalDetailsReducer, {
         id: data.id,
         surname: data.surname,
         first_name: data.first_name,
@@ -58,17 +25,6 @@ const PersonalDetailsForm = ({ data, url }) => {
     };
     return (
         <>
-            <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">
-                    Update Declaration User{" "}
-                </h5>
-                <button
-                    type="button"
-                    className="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                ></button>
-            </div>
             <div className="modal-body">
                 <form className="form">
                     <div className="form-group">
@@ -206,25 +162,7 @@ const PersonalDetailsForm = ({ data, url }) => {
                     </div>
                 </form>
             </div>
-            <div className="modal-footer">
-                <button
-                    type="button"
-                    className="btn btn-danger"
-                    data-bs-dismiss="modal"
-                    onClick={() => {
-                        updateUsers(state, url);
-                    }}
-                >
-                    Yes
-                </button>
-                <button
-                    type="button"
-                    className="btn btn-secondary"
-                    data-bs-dismiss="modal"
-                >
-                    Close
-                </button>
-            </div>
+            <FormButtons state={state} url={url} />
         </>
     );
 };

@@ -1,32 +1,9 @@
 import React, { useReducer } from "react";
-import { updateUsers } from "../Modals/UpdateModal";
+import FormButtons from "../FormButtons";
+import { typesOfProductPurchasedReducer } from "../Reducers";
 
 const TypesOfProductPurchasedForm = ({ data, url }) => {
-    const reducer = (state, action) => {
-        switch (action.type) {
-            case "glen_forest_memorial_park":
-                return { ...state, glen_forest_memorial_park: action.payload };
-            case "chemhute_park":
-                return { ...state, chemhute_park: action.payload };
-            case "matidoda_park":
-                return { ...state, matidoda_park: action.payload };
-            case "single_unit":
-                return { ...state, single_unit: action.payload };
-            case "double_unit":
-                return { ...state, double_unit: action.payload };
-            case "triple_unit":
-                return { ...state, triple_unit: action.payload };
-            case "family_close":
-                return { ...state, family_close: action.payload };
-            case "other_detail":
-                return { ...state, other_detail: action.payload };
-
-            default:
-                return { state };
-        }
-    };
-
-    const [state, dispatch] = useReducer(reducer, {
+    const [state, dispatch] = useReducer(typesOfProductPurchasedReducer, {
         id: data.id,
         glen_forest_memorial_park: data.glen_forest_memorial_park,
         chemhute_park: data.chemhute_park,
@@ -44,17 +21,6 @@ const TypesOfProductPurchasedForm = ({ data, url }) => {
     };
     return (
         <>
-            <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">
-                    Update Terms And Conditions User{" "}
-                </h5>
-                <button
-                    type="button"
-                    className="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                ></button>
-            </div>
             <div className="modal-body">
                 <form className="form">
                     <div className="form-group">
@@ -142,25 +108,7 @@ const TypesOfProductPurchasedForm = ({ data, url }) => {
                     </div>
                 </form>
             </div>
-            <div className="modal-footer">
-                <button
-                    type="button"
-                    className="btn btn-danger"
-                    data-bs-dismiss="modal"
-                    onClick={() => {
-                        updateUsers(state, url);
-                    }}
-                >
-                    Yes
-                </button>
-                <button
-                    type="button"
-                    className="btn btn-secondary"
-                    data-bs-dismiss="modal"
-                >
-                    Close
-                </button>
-            </div>
+            <FormButtons state={state} url={url} />
         </>
     );
 };

@@ -1,28 +1,9 @@
 import React, { useReducer } from "react";
-import { updateUsers } from "../Modals/UpdateModal";
+import FormButtons from "../FormButtons";
+import { declarationReducer } from "../Reducers";
 
 const DeclarationForm = ({ data, url }) => {
-    const reducer = (state, action) => {
-        switch (action.type) {
-            case "Blank1":
-                return { ...state, Blank1: action.payload };
-            case "Blank2":
-                return { ...state, Blank2: action.payload };
-            case "Blank3":
-                return { ...state, Blank3: action.payload };
-            case "Blank4":
-                return { ...state, Blank4: action.payload };
-            case "Blank5":
-                return { ...state, Blank5: action.payload };
-            case "Blank6":
-                return { ...state, Blank6: action.payload };
-            case "Blank7":
-                return { ...state, Blank7: action.payload };
-            default:
-                return { state };
-        }
-    };
-    const [state, dispatch] = useReducer(reducer, {
+    const [state, dispatch] = useReducer(declarationReducer, {
         id: data.id,
         Blank1: data.Blank1,
         Blank2: data.Blank2,
@@ -40,17 +21,6 @@ const DeclarationForm = ({ data, url }) => {
     };
     return (
         <>
-            <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">
-                    Update Declaration User{" "}
-                </h5>
-                <button
-                    type="button"
-                    className="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                ></button>
-            </div>
             <div className="modal-body">
                 <form className="form">
                     <div className="form-group">
@@ -128,25 +98,7 @@ const DeclarationForm = ({ data, url }) => {
                     </div>
                 </form>
             </div>
-            <div className="modal-footer">
-                <button
-                    type="button"
-                    className="btn btn-danger"
-                    data-bs-dismiss="modal"
-                    onClick={() => {
-                        updateUsers(state, url);
-                    }}
-                >
-                    Yes
-                </button>
-                <button
-                    type="button"
-                    className="btn btn-secondary"
-                    data-bs-dismiss="modal"
-                >
-                    Close
-                </button>
-            </div>
+            <FormButtons state={state} url={url} />
         </>
     );
 };

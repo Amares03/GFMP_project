@@ -1,33 +1,9 @@
 import React, { useReducer } from "react";
-import { updateUsers } from "../Modals/UpdateModal";
+import FormButtons from "../FormButtons";
+import { forOfficeUseReducer } from "../Reducers";
 
 const ForOfficeUseForm = ({ data, url }) => {
-    const reducer = (state, action) => {
-        switch (action.type) {
-            case "application":
-                return { ...state, application: action.payload };
-            case "payment_period":
-                return { ...state, payment_period: action.payload };
-            case "cash":
-                return { ...state, cash: action.payload };
-            case "months_3":
-                return { ...state, months_3: action.payload };
-            case "months_6":
-                return { ...state, months_6: action.payload };
-            case "other":
-                return { ...state, other: action.payload };
-            case "monthly_instalment":
-                return { ...state, monthly_instalment: action.payload };
-            case "authorized_signatory":
-                return { ...state, authorized_signatory: action.payload };
-            case "plot_number":
-                return { ...state, plot_number: action.payload };
-            default:
-                return { state };
-        }
-    };
-
-    const [state, dispatch] = useReducer(reducer, {
+    const [state, dispatch] = useReducer(forOfficeUseReducer, {
         id: data.id,
         application: data.application,
         payment_period: data.payment_period,
@@ -46,17 +22,6 @@ const ForOfficeUseForm = ({ data, url }) => {
     };
     return (
         <>
-            <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">
-                    Update Declaration User{" "}
-                </h5>
-                <button
-                    type="button"
-                    className="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                ></button>
-            </div>
             <div className="modal-body">
                 <form className="form">
                     <div className="form-group">
@@ -154,25 +119,7 @@ const ForOfficeUseForm = ({ data, url }) => {
                     </div>
                 </form>
             </div>
-            <div className="modal-footer">
-                <button
-                    type="button"
-                    className="btn btn-danger"
-                    data-bs-dismiss="modal"
-                    onClick={() => {
-                        updateUsers(state, url);
-                    }}
-                >
-                    Yes
-                </button>
-                <button
-                    type="button"
-                    className="btn btn-secondary"
-                    data-bs-dismiss="modal"
-                >
-                    Close
-                </button>
-            </div>
+            <FormButtons state={state} url={url} />
         </>
     );
 };

@@ -1,21 +1,9 @@
 import React, { useReducer } from "react";
-import { updateUsers } from "../Modals/UpdateModal";
+import FormButtons from "../FormButtons";
+import { modeOfPaymentReducer } from "../Reducers";
 
 const ModeOfPaymentForm = ({ data, url }) => {
-    const reducer = (state, action) => {
-        switch (action.type) {
-            case "months_3":
-                return { ...state, months_3: action.payload };
-            case "months_6":
-                return { ...state, months_6: action.payload };
-            case "amount_of_initial_disposal":
-                return { ...state, amount_of_initial_disposal: action.payload };
-            default:
-                return { state };
-        }
-    };
-
-    const [state, dispatch] = useReducer(reducer, {
+    const [state, dispatch] = useReducer(modeOfPaymentReducer, {
         id: data.id,
         months_3: data.months_3,
         months_6: data.months_6,
@@ -28,17 +16,6 @@ const ModeOfPaymentForm = ({ data, url }) => {
     };
     return (
         <>
-            <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">
-                    Update Declaration User{" "}
-                </h5>
-                <button
-                    type="button"
-                    className="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                ></button>
-            </div>
             <div className="modal-body">
                 <form className="form">
                     <div className="form-group">
@@ -76,25 +53,7 @@ const ModeOfPaymentForm = ({ data, url }) => {
                     </div>
                 </form>
             </div>
-            <div className="modal-footer">
-                <button
-                    type="button"
-                    className="btn btn-danger"
-                    data-bs-dismiss="modal"
-                    onClick={() => {
-                        updateUsers(state, url);
-                    }}
-                >
-                    Yes
-                </button>
-                <button
-                    type="button"
-                    className="btn btn-secondary"
-                    data-bs-dismiss="modal"
-                >
-                    Close
-                </button>
-            </div>
+            <FormButtons state={state} url={url} />
         </>
     );
 };

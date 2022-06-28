@@ -1,24 +1,9 @@
 import React, { useReducer } from "react";
-import { updateUsers } from "../Modals/UpdateModal";
+import FormButtons from "../FormButtons";
+import { nominatedBeneficiariesReducer } from "../Reducers";
 
 const NominatedBeneficiariesForm = ({ data, url }) => {
-    const reducer = (state, action) => {
-        switch (action.type) {
-            case "name":
-                return { ...state, name: action.payload };
-            case "age":
-                return { ...state, age: action.payload };
-            case "relationship":
-                return {
-                    ...state,
-                    relationship: action.payload,
-                };
-            default:
-                return { state };
-        }
-    };
-
-    const [state, dispatch] = useReducer(reducer, {
+    const [state, dispatch] = useReducer(nominatedBeneficiariesReducer, {
         id: data.id,
         name: data.name,
         age: data.age,
@@ -31,17 +16,6 @@ const NominatedBeneficiariesForm = ({ data, url }) => {
     };
     return (
         <>
-            <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">
-                    Update Declaration User{" "}
-                </h5>
-                <button
-                    type="button"
-                    className="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                ></button>
-            </div>
             <div className="modal-body">
                 <form className="form">
                     <div className="form-group">
@@ -79,25 +53,7 @@ const NominatedBeneficiariesForm = ({ data, url }) => {
                     </div>
                 </form>
             </div>
-            <div className="modal-footer">
-                <button
-                    type="button"
-                    className="btn btn-danger"
-                    data-bs-dismiss="modal"
-                    onClick={() => {
-                        updateUsers(state, url);
-                    }}
-                >
-                    Yes
-                </button>
-                <button
-                    type="button"
-                    className="btn btn-secondary"
-                    data-bs-dismiss="modal"
-                >
-                    Close
-                </button>
-            </div>
+            <FormButtons state={state} url={url} />
         </>
     );
 };
