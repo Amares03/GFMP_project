@@ -5540,10 +5540,24 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+function convertDate(date) {
+  var yyyy = date.getFullYear().toString();
+  var mm = (date.getMonth() + 1).toString();
+  var dd = date.getDate().toString();
+  var mmChars = mm.split("");
+  var ddChars = dd.split("");
+  return yyyy + "-" + (mmChars[1] ? mm : "0" + mmChars[0]) + "-" + (ddChars[1] ? dd : "0" + ddChars[0]);
+}
+
 var CreateForm = function CreateForm(_ref) {
   var setShowForm = _ref.setShowForm;
 
-  // certificate
+  var addUsers = function addUsers(state, url) {
+    // axios.post(`add/${url}/user`, state).then((response) => {});
+    console.log("ADD CALLED" + state + "  " + url);
+  }; // certificate
+
+
   var _useReducer = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(_Reducers__WEBPACK_IMPORTED_MODULE_8__.certificateReducer, {
     certificate: ""
   }),
@@ -5605,7 +5619,7 @@ var CreateForm = function CreateForm(_ref) {
   var _useReducer11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(_Reducers__WEBPACK_IMPORTED_MODULE_8__.personalDetailsReducer, {
     surname: "",
     first_name: "",
-    date: new Date(),
+    date: convertDate(new Date()),
     martial_status: "",
     name_of_spouse: "",
     physical_address: "",
@@ -5653,7 +5667,8 @@ var CreateForm = function CreateForm(_ref) {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_FormCertificate__WEBPACK_IMPORTED_MODULE_1__["default"], {
           dispatch: certificateDispatch,
           state: certificateState,
-          show: false
+          show: false,
+          add: addUsers
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
         className: "col",
@@ -5723,6 +5738,9 @@ var CreateForm = function CreateForm(_ref) {
         className: "col",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("button", {
           className: "btn btn-info",
+          onClick: function onClick() {
+            addUsers(certificateState, "certificate");
+          },
           children: "Submit"
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
@@ -5761,7 +5779,9 @@ var FormCertificate = function FormCertificate(_ref) {
 
   var onChange = function onChange(event) {
     var newValue = event.target.value;
-    var currentId = event.target.id;
+    var currentId = event.target.id; // console.log(newValue);
+    // console.log(currentId);
+
     dispatch({
       type: currentId,
       payload: newValue
@@ -6632,6 +6652,7 @@ var DeleteModal = function DeleteModal(_ref) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "addUsers": () => (/* binding */ addUsers),
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
 /* harmony export */   "updateUsers": () => (/* binding */ updateUsers)
 /* harmony export */ });
@@ -6663,6 +6684,10 @@ __webpack_require__.r(__webpack_exports__);
 
 var updateUsers = function updateUsers(state, url) {
   axios__WEBPACK_IMPORTED_MODULE_0___default().post("update/".concat(url, "/user"), state).then(function (response) {});
+};
+var addUsers = function addUsers(state, url) {
+  // axios.post(`add/${url}/user`, state).then((response) => {});
+  console.log("ADD CALLED" + state + "  " + url);
 };
 
 var UpdateModal = function UpdateModal(_ref) {

@@ -13,6 +13,11 @@ import TypesOfProductPurchasedForm from "../SingleModals/TypesOfProductPurchased
 export const updateUsers = (state, url) => {
     axios.post(`update/${url}/user`, state).then((response) => {});
 };
+export const addUsers = (state, url) => {
+    // axios.post(`add/${url}/user`, state).then((response) => {});
+    console.log("ADD CALLED" + state + "  " + url);
+};
+
 const UpdateModal = ({ url, modalId, data }) => {
     const getForms = () => {
         if (url === "certificate") {

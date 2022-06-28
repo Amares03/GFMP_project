@@ -4,8 +4,11 @@ const FormCertificate = ({ dispatch, state, show }) => {
     const onChange = (event) => {
         const newValue = event.target.value;
         const currentId = event.target.id;
+        // console.log(newValue);
+        // console.log(currentId);
         dispatch({ type: currentId, payload: newValue });
     };
+
     return (
         <form className="form">
             <div className="form-group">

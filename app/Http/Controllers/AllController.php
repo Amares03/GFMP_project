@@ -329,4 +329,20 @@ class AllController extends Controller
             Log::error($e);
         }
      }
+
+
+     //ADD USERS
+    //add certificate user
+     public function addCertificateUser(Request $request){
+        try {
+              $list = certificate_link::create([
+                'certificate' => $request->get('certificate'),
+            ]);
+
+            return response()->json($list);
+
+        } catch (Exception $e) {
+            Log::error($e);
+        }
+     }
 }

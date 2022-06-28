@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useState } from "react";
 import FormCertificate from "./FormCertificate";
 import FormForOfficeUse from "./FormForOfficeUse";
 import FormModeOfPayment from "./FormModeOfPayment";
@@ -17,7 +17,29 @@ import {
     typesOfProductPurchasedReducer,
 } from "../Reducers";
 import FormDeclaration from "./FormDeclaration";
+
+function convertDate(date) {
+    var yyyy = date.getFullYear().toString();
+    var mm = (date.getMonth() + 1).toString();
+    var dd = date.getDate().toString();
+
+    var mmChars = mm.split("");
+    var ddChars = dd.split("");
+
+    return (
+        yyyy +
+        "-" +
+        (mmChars[1] ? mm : "0" + mmChars[0]) +
+        "-" +
+        (ddChars[1] ? dd : "0" + ddChars[0])
+    );
+}
+
 const CreateForm = ({ setShowForm }) => {
+    const addUsers = (state, url) => {
+        // axios.post(`add/${url}/user`, state).then((response) => {});
+        console.log("ADD CALLED" + state + "  " + url);
+    };
     // certificate
     const [certificateState, certificateDispatch] = useReducer(
         certificateReducer,
@@ -78,7 +100,7 @@ const CreateForm = ({ setShowForm }) => {
         {
             surname: "",
             first_name: "",
-            date: new Date(),
+            date: convertDate(new Date()),
             martial_status: "",
             name_of_spouse: "",
             physical_address: "",
@@ -121,6 +143,7 @@ const CreateForm = ({ setShowForm }) => {
                         dispatch={certificateDispatch}
                         state={certificateState}
                         show={false}
+                        add={addUsers}
                     />
                 </div>
                 <div className="col">
@@ -188,7 +211,14 @@ const CreateForm = ({ setShowForm }) => {
                     </button>
                 </div>
                 <div className="col">
-                    <button className="btn btn-info">Submit</button>
+                    <button
+                        className="btn btn-info"
+                        onClick={() => {
+                            addUsers(certificateState, "certificate");
+                        }}
+                    >
+                        Submit
+                    </button>
                 </div>
                 <div className="col"></div>
             </div>

@@ -54,7 +54,14 @@ Route::post('update/types_of_product_purchased/user',[AllController::class, 'upd
 
 
 
+Route::post('add/certificate/user',[AllController::class, 'addCertificateUser'])->name('certificate.add');
+Route::post('add/declaration/user',[AllController::class, 'addDeclarationUser'])->name('declaration.add');
+Route::post('add/for_office_use/user',[AllController::class, 'addForOfficeUseUser'])->name('for_office_use.add');
+Route::post('add/mode_of_payment/user',[AllController::class, 'addModeOfPaymentUser'])->name('mode_of_payment.add');
+Route::post('add/nominated_beneficiaries/user',[AllController::class, 'addNominatedBeneficiariesUser'])->name('nominated_beneficiaries.add');
+Route::post('add/personal_details/user',[AllController::class, 'addPersonalDetailsUser'])->name('personal_details.add');
+Route::post('add/terms_and_conditions/user',[AllController::class, 'addTermsAndConditionsUser'])->name('terms_and_conditions.add');
+Route::post('add/types_of_product_purchased/user',[AllController::class, 'addTypesOfProductPurchasedUser'])->name('types_of_product_purchased.add');
 
 
 
-Route::get('get/certificate/user/{id}',[AllController::class, 'getCertificateUser'])->name('certificate.user');
