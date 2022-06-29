@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import axios from "axios";
 import TablesRow from "../TablesRow";
 
@@ -13,7 +13,7 @@ const PersonalDetails = () => {
     };
 
     //component life cycle
-    useEffect(() => {
+    useLayoutEffect(() => {
         getPersonalDetailsData();
     }, []);
     return (

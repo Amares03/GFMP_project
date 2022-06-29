@@ -1,7 +1,7 @@
 import { Provider } from "react-redux";
 import React, { useState } from "react";
 import { Button, Card } from "react-bootstrap";
-import { FaUserPlus, FaTrash } from "react-icons/fa";
+import { FaPlus, FaTrash } from "react-icons/fa";
 
 import Table from "./Table";
 import store from "../redux/store/store";
@@ -29,16 +29,16 @@ function App() {
                         </Card>
                     ) : (
                         <div className="col">
-                            <span>ADD USER </span>
                             <Button
                                 variant="light"
-                                size="md"
+                                size="xl"
                                 // className="btn btn-light"
                                 onClick={() => {
                                     setShowForm(true);
                                 }}
                             >
-                                <FaUserPlus />
+                                <span>{"ADD USER "}</span>
+                                <FaPlus />
                             </Button>
                         </div>
                     )}

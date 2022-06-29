@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { Component, useLayoutEffect, useState } from "react";
 import axios from "axios";
 import TablesRow from "../TablesRow";
 
@@ -13,7 +13,7 @@ const DeclarationTable = () => {
 
         // react Component life cycle
     };
-    useEffect(() => {
+    useLayoutEffect(() => {
         getDeclarationData();
     }, []);
     return (
