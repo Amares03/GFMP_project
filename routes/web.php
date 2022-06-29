@@ -65,3 +65,9 @@ Route::post('add/types_of_product_purchased/user',[AllController::class, 'addTyp
 
 
 
+
+
+Route::post('add/all/user',[AllController::class, 'addAll'])->name('all.add');
+
+
+

@@ -139,12 +139,12 @@ const CreateForm = ({ setShowForm }) => {
         <div className="container">
             <div className="row">
                 <div className="col">
-                    <FormCertificate
+                    {/* <FormCertificate
                         dispatch={certificateDispatch}
                         state={certificateState}
                         show={false}
                         add={addUsers}
-                    />
+                    /> */}
                 </div>
                 <div className="col">
                     <FormDeclaration

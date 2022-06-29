@@ -298,7 +298,6 @@ class AllController extends Controller
 
               $list = terms_and_conditions::where('id',$id)->update([
                 'terms_table' => $request->get('terms_table'),
-   
             ]);
 
             return response()->json($list);
@@ -345,4 +344,76 @@ class AllController extends Controller
             Log::error($e);
         }
      }
+
+    public function addAll(Request $request){
+        try {
+            
+              certificate_link::create([
+                'certificate' => $request->get('certificate'),
+            ]);
+              declaration::create([
+                'Blank1' => $request->get('Blank1'),
+                'Blank2' => $request->get('Blank2'),
+                'Blank3' => $request->get('Blank3'),
+                'Blank4' => $request->get('Blank4'),
+                'Blank5' => $request->get('Blank5'),
+                'Blank6' => $request->get('Blank6'),
+                'Blank7' => $request->get('Blank7'),
+            ]);
+            for_office_use::create([
+                'application' => $request->get('application'),
+                'payment_period' => $request->get('payment_period'),
+                'cash' => $request->get('cash'),
+                'months_3' => $request->get('months_3'),
+                'months_6' => $request->get('months_6'),
+                'other' => $request->get('other'),
+                'monthly_instalment' => $request->get('monthly_instalment'),
+                'authorized_signatory' => $request->get('authorized_signatory'),
+                'plot_number' => $request->get('plot_number'),
+            ]);
+             mode_of_payment::create([
+                'months_3' => $request->get('months_3'),
+                'months_6' => $request->get('months_6'),
+                'amount_of_initial_disposal' => $request->get('amount_of_initial_disposal'),
+            ]);
+             nominated_beneficiaries::create([
+                'name' => $request->get('name'),
+                'age' => $request->get('age'),
+                'relationship' => $request->get('relationship'),
+            ]);
+            personal_details::create([
+                'surname' => $request->get('surname'),
+                'first_name' => $request->get('first_name'),
+                'date' => $request->get('date'),
+                'martial_status' => $request->get('martial_status'),
+                'name_of_spouse' => $request->get('name_of_spouse'),
+                'physical_address' => $request->get('physical_address'),
+                'postal_address' => $request->get('postal_address'),
+                'employer' => $request->get('employer'),
+                'occupation' => $request->get('occupation'),
+                'tel_no_home' => $request->get('tel_no_home'),
+                'cell' => $request->get('cell'),
+                'tel_no_business' => $request->get('tel_no_business'),
+                'email' => $request->get('email'),
+            ]);
+            terms_and_conditions::create([
+                'terms_table' => $request->get('terms_table'),
+            ]);
+            types_of_product_purchased::create([
+                'glen_forest_memorial_park' => $request->get('glen_forest_memorial_park'),
+                'chemhute_park' => $request->get('chemhute_park'),
+                'matidoda_park' => $request->get('matidoda_park'),
+                'single_unit' => $request->get('single_unit'),
+                'double_unit' => $request->get('double_unit'),
+                'triple_unit' => $request->get('triple_unit'),
+                'family_close' => $request->get('family_close'),
+                'other_detail' => $request->get('other_detail'),
+            ]);
+
+            // return response()->json($list);
+
+        } catch (Exception $e) {
+            Log::error($e);
+        }
+    }
 }
