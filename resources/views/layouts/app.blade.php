@@ -15,12 +15,13 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
+    <div id="app"style="background-color: #F4FCD9;">
         <nav class="navbar navbar-expand-xl sticky-top navbar-light shadow-sm" style="background-color: #9EB23B;">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}" style="color: #FCF9C6;">
@@ -44,13 +45,13 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item"style="color: #FCF9C6;">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}"><i class="bi bi-box-arrow-in-right"></i>{{ __('Login') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item"style="color: #FCF9C6;">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}"><i class="bi bi-person-plus-fill"></i>{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else

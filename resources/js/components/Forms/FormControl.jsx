@@ -20,7 +20,7 @@ function convertDate(date) {
     );
 }
 
-const FormControl = () => {
+const FormControl = ({ show }) => {
     const dispatch = useDispatch();
     const handleSubmit = async (values) => {
         // axios.post(`add/${url}/user`, state).then((response) => {});
@@ -90,6 +90,12 @@ const FormControl = () => {
                     <form onSubmit={handleSubmit}>
                         <div className="row">
                             <div className="col">
+                                <label
+                                    htmlFor="certificate"
+                                    style={{ color: "#E5E3C9" }}
+                                >
+                                    Certificate
+                                </label>
                                 <input
                                     placeholder="Certificate"
                                     name="certificate"
@@ -425,6 +431,7 @@ const FormControl = () => {
                         </div>
 
                         <button type="submit">Submit</button>
+                        <button onClick={() => show(false)}>Cancel</button>
                     </form>
                 )}
             </Formik>

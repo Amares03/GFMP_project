@@ -1,8 +1,7 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import CreateForm from "./Forms/CreateForm";
-import FormControl from "./Forms/FormControl";
+
 import CertificateTable from "./Tables/CertificateTable/CertificateTable";
 import DeclarationTable from "./Tables/DeclarationTable/DeclarationTable";
 import ForOfficeUse from "./Tables/ForOfficeUse/ForOfficeUse";
@@ -13,22 +12,8 @@ import TermsAndConditions from "./Tables/TermsAndConditions/TermsAndConditions";
 import TypesOfProductPurchased from "./Tables/TypesOfProductPurchased/TypesOfProductPurchased";
 
 const Table = () => {
-    const [showForm, setShowForm] = useState(false);
     return (
         <>
-            {showForm ? (
-                // <CreateForm setShowForm={setShowForm} />
-                <FormControl />
-            ) : (
-                <button
-                    className="btn btn-info"
-                    onClick={() => {
-                        setShowForm(true);
-                    }}
-                >
-                    Create User
-                </button>
-            )}
             <div className="container">
                 <ToastContainer />
 

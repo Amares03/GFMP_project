@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { Component, useLayoutEffect, useState } from "react";
 import axios from "axios";
 import TablesRow from "../TablesRow";
 
@@ -10,7 +10,7 @@ const CertificateTable = () => {
             setTableData(response.data);
         });
     };
-    useEffect(() => {
+    useLayoutEffect(() => {
         getCertificateData();
     }, []);
     return (

@@ -4,11 +4,12 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+            <div class="card"style="color:#FCF9C6">
+                <!-- <div class="card-header">{{ __('Login') }}</div> -->
+                <h5 class="card-header"style="background-color: #C7D36F;">{{ __('Login') }}</h5>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                <div class="card-body" style="background-color: #2C3639;">
+                    <form method="POST" action="{{ route('login') }}" style="color:#FCF9C6">
                         @csrf
 
                         <div class="row mb-3">
@@ -53,7 +54,7 @@
 
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn "style="background-color: #9EB23A;color:#FCF9C6;">
                                     {{ __('Login') }}
                                 </button>
 
