@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import TablesRow from "../TablesRow";
 
@@ -19,7 +19,7 @@ const PersonalDetails = () => {
     return (
         <>
             <h4 className="text-left mt-3">Personal Details Table</h4>
-            <table className="table table-hover ">
+            <table className="table table-hover " responsive="sm">
                 <thead>
                     <tr>
                         <th scope="col" width="50px">
