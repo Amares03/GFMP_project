@@ -21,9 +21,9 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-green shadow-sm">
+        <nav class="navbar navbar-expand-xl sticky-top navbar-light shadow-sm" style="background-color: #9EB23B;">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}" style="color:green;">
+                <a class="navbar-brand" href="{{ url('/') }}" style="color: #FCF9C6;">
                     <strong>
                         Glen Forest 
                     </strong>
@@ -43,19 +43,19 @@
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
-                                <li class="nav-item">
+                                <li class="nav-item"style="color: #FCF9C6;">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
-                                <li class="nav-item">
+                                <li class="nav-item"style="color: #FCF9C6;">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <li class="nav-item dropdown"style="color: #FCF9C6;">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="color: #FCF9C6;">
                                     {{ Auth::user()->name }}
                                 </a>
 
@@ -80,22 +80,15 @@
         <main class="py-4">
             @yield('content')
         </main>
-    </div>
-
-    <div class="container">
-                    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-                        <div class="col-md-4 d-flex align-items-center">
-                        <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-                           LOGO Here
-                        </a>
-                        <span class="mb-3 mb-md-0 text-muted">© 2022 Company, Inc</span>
-                        </div>
+         <footer class="footer mt-auto py-3" >
+                         <span class="mb-3 mb-md-0 text-muted " style="color: #FCF9C6;">© 2022 Company, Inc</span>
                         <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-                        <li class="ms-3"><a class="text-muted" href="#">Twitter</a></li>
-                        <li class="ms-3"><a class="text-muted" href="#">Instagram</a></li>
-                        <li class="ms-3"><a class="text-muted" href="#">Facebook</a></li>
+                            <li class="ms-3"><a class="text-muted"style="color: #FCF9C6;" href="#">Twitter</a></li>
+                            <li class="ms-3"><a class="text-muted"style="color: #FCF9C6;" href="#">Instagram</a></li>
+                            <li class="ms-3"><a class="text-muted"style="color: #FCF9C6;" href="#">Facebook</a></li>
                         </ul>
+                    
                     </footer>
-                </div>
+    </div>
 </body>
 </html>
