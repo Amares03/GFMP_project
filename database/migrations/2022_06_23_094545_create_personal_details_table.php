@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('surname',100);
             $table->string('first_name',100);
-            $table->date('date');
+            $table->date('date')->default("2020-02-02");
             $table->enum('martial_status', array('Married', 'Single','Widowed','Divorced'));
             $table->string('name_of_spouse',200);
-            $table->string('nationality',100);
+            $table->string('nationality',100)->default("ethiopia");
             $table->string('physical_address',200);
             $table->string('postal_address',200);
             $table->string('employer',100);

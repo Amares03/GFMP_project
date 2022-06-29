@@ -26,6 +26,7 @@ const FormControl = () => {
         // axios.post(`add/${url}/user`, state).then((response) => {});
 
         await axios.post("add/all/user", values);
+        console.log(values);
     };
     return (
         <div>
@@ -81,7 +82,7 @@ const FormControl = () => {
                     double_unit: 0,
                     triple_unit: 0,
                     family_close: 0,
-                    other_detail: 0,
+                    other_detail: "",
                 }}
                 onSubmit={handleSubmit}
             >
@@ -215,6 +216,210 @@ const FormControl = () => {
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                     value={values.plot_number}
+                                />
+                            </div>
+                            <div className="col">
+                                <input
+                                    type="number"
+                                    placeholder="amount_of_initial_disposal"
+                                    name="amount_of_initial_disposal"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.amount_of_initial_disposal}
+                                />
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col">
+                                <input
+                                    placeholder="name"
+                                    name="name"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.name}
+                                />
+                                <input
+                                    type="number"
+                                    placeholder="age"
+                                    name="age"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.age}
+                                />
+                                <input
+                                    placeholder="relationship"
+                                    name="relationship"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.relationship}
+                                />
+                            </div>
+                            <div className="col">
+                                <input
+                                    placeholder="surname"
+                                    name="surname"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.surname}
+                                />
+                                <input
+                                    placeholder="first_name"
+                                    name="first_name"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.first_name}
+                                />
+                                <input
+                                    type="date"
+                                    placeholder="date"
+                                    name="date"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.date}
+                                />
+                                <input
+                                    placeholder="martial_status"
+                                    name="martial_status"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.martial_status}
+                                />
+                                <input
+                                    placeholder="name_of_spouse"
+                                    name="name_of_spouse"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.name_of_spouse}
+                                />
+                                <input
+                                    placeholder="physical_address"
+                                    name="physical_address"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.physical_address}
+                                />
+                                <input
+                                    placeholder="postal_address"
+                                    name="postal_address"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.postal_address}
+                                />
+                                <input
+                                    placeholder="employer"
+                                    name="employer"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.employer}
+                                />
+                                <input
+                                    placeholder="occupation"
+                                    name="occupation"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.occupation}
+                                />
+                                <input
+                                    placeholder="tel_no_home"
+                                    name="tel_no_home"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.tel_no_home}
+                                />
+                                <input
+                                    placeholder="cell"
+                                    name="cell"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.cell}
+                                />
+                                <input
+                                    placeholder="tel_no_business"
+                                    name="tel_no_business"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.tel_no_business}
+                                />
+                                <input
+                                    placeholder="email"
+                                    name="email"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.email}
+                                />
+                            </div>
+                            <div className="col">
+                                <input
+                                    placeholder="terms_table"
+                                    name="terms_table"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.terms_table}
+                                />
+                            </div>
+                            <div className="col">
+                                <input
+                                    type="number"
+                                    placeholder="glen_forest_memorial_park"
+                                    name="glen_forest_memorial_park"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.glen_forest_memorial_park}
+                                />
+                                <input
+                                    type="number"
+                                    placeholder="chemhute_park"
+                                    name="chemhute_park"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.chemhute_park}
+                                />
+                                <input
+                                    type="number"
+                                    placeholder="matidoda_park"
+                                    name="matidoda_park"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.matidoda_park}
+                                />
+                                <input
+                                    type="number"
+                                    placeholder="single_unit"
+                                    name="single_unit"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.single_unit}
+                                />
+                                <input
+                                    type="number"
+                                    placeholder="double_unit"
+                                    name="double_unit"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.double_unit}
+                                />
+                                <input
+                                    type="number"
+                                    placeholder="triple_unit"
+                                    name="triple_unit"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.triple_unit}
+                                />
+                                <input
+                                    type="number"
+                                    placeholder="family_close"
+                                    name="family_close"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.family_close}
+                                />
+                                <input
+                                    placeholder="other_detail"
+                                    name="other_detail"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.other_detail}
                                 />
                             </div>
                         </div>
