@@ -416,4 +416,22 @@ class AllController extends Controller
             Log::error($e);
         }
     }
+
+    function generateBarcodeNumber() {
+    $number = mt_rand(1000, 9999); 
+
+    // call the same function if the barcode exists already
+    if (barcodeNumberExists($number)) {
+        return generateBarcodeNumber();
+    }
+
+    // otherwise, it's valid and can be used
+    return $number;
+}
+
+function barcodeNumberExists($number) {
+    // query the database and return a boolean
+    // for instance, it might look like this in Laravel
+    return certificate_link::whereBarcodeNumber($number)->exists();
+}
 }

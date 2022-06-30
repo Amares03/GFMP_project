@@ -1,16 +1,13 @@
 import React from "react";
-import { Formik, Field, useFormikContext } from "formik";
+import { Formik, Field, useFormikContext, ErrorMessage } from "formik";
+import { ToastContainer, toast } from "react-toastify";
+
 import { useDispatch } from "react-redux";
-import { userInfoActions } from "../../redux/slices/userInfoSlice";
+
 import axios from "axios";
-import {
-    DropdownButton,
-    Dropdown,
-    FloatingLabel,
-    Form,
-    InputGroup,
-    Button,
-} from "react-bootstrap";
+import { FloatingLabel, Form, InputGroup, Button } from "react-bootstrap";
+import { validate } from "../Validation";
+
 function convertDate(date) {
     var yyyy = date.getFullYear().toString();
     var mm = (date.getMonth() + 1).toString();
@@ -30,10 +27,12 @@ function convertDate(date) {
 
 const FormControl = ({ show }) => {
     const dispatch = useDispatch();
+    const redStyle = { color: "#E21515E0" };
     const handleSubmit = async (values) => {
-        // axios.post(`add/${url}/user`, state).then((response) => {});
-
-        await axios.post("add/all/user", values);
+        await axios.post("add/all/user", values).then(() => {
+            toast("User Added Successfully");
+            location.reload();
+        });
         console.log(values);
     };
     return (
@@ -53,18 +52,18 @@ const FormControl = ({ show }) => {
                     // forOfficeUse
                     application: "",
                     payment_period: "",
-                    cash: 0,
-                    months_3: 0,
-                    months_6: 0,
+                    cash: null,
+                    months_3: null,
+                    months_6: null,
                     other: "",
                     monthly_instalment: "",
                     authorized_signatory: "",
-                    plot_number: 0,
+                    plot_number: null,
                     // modeOfPayment
-                    amount_of_initial_disposal: 0,
+                    amount_of_initial_disposal: null,
                     // nominatedBeneficiaries
                     name: "",
-                    age: 0,
+                    age: null,
                     relationship: "",
                     // personalDetails
                     surname: "",
@@ -84,15 +83,16 @@ const FormControl = ({ show }) => {
                     // termsAndConditions
                     terms_table: "",
                     // typesOfProductPurchased
-                    glen_forest_memorial_park: 0,
-                    chemhute_park: 0,
-                    matidoda_park: 0,
-                    single_unit: 0,
-                    double_unit: 0,
-                    triple_unit: 0,
-                    family_close: 0,
+                    glen_forest_memorial_park: null,
+                    chemhute_park: null,
+                    matidoda_park: null,
+                    single_unit: null,
+                    double_unit: null,
+                    triple_unit: null,
+                    family_close: null,
                     other_detail: "",
                 }}
+                validationSchema={validate}
                 onSubmit={handleSubmit}
             >
                 {({ values, handleChange, handleSubmit, handleBlur }) => (
@@ -114,6 +114,12 @@ const FormControl = ({ show }) => {
                                             value={values.certificate}
                                         />
                                     </FloatingLabel>
+                                    <ErrorMessage
+                                        name="certificate"
+                                        render={(msg) => (
+                                            <div style={redStyle}>{msg}</div>
+                                        )}
+                                    />
                                 </Form.Group>
                                 <Form.Group>
                                     <Form.Label style={{ color: "#E5E3C9" }}>
@@ -129,6 +135,12 @@ const FormControl = ({ show }) => {
                                             value={values.Blank1}
                                         />
                                     </FloatingLabel>
+                                    <ErrorMessage
+                                        name="Blank1"
+                                        render={(msg) => (
+                                            <div style={redStyle}>{msg}</div>
+                                        )}
+                                    />
                                     <div className="row">
                                         <div className="col">
                                             {" "}
@@ -142,6 +154,14 @@ const FormControl = ({ show }) => {
                                                     value={values.Blank2}
                                                 />
                                             </FloatingLabel>
+                                            <ErrorMessage
+                                                name="Blank2"
+                                                render={(msg) => (
+                                                    <div style={redStyle}>
+                                                        {msg}
+                                                    </div>
+                                                )}
+                                            />
                                             <FloatingLabel label="Blank3">
                                                 <Form.Control
                                                     type="text"
@@ -152,6 +172,14 @@ const FormControl = ({ show }) => {
                                                     value={values.Blank3}
                                                 />
                                             </FloatingLabel>
+                                            <ErrorMessage
+                                                name="Blank3"
+                                                render={(msg) => (
+                                                    <div style={redStyle}>
+                                                        {msg}
+                                                    </div>
+                                                )}
+                                            />
                                             <FloatingLabel label="Blank4">
                                                 <Form.Control
                                                     type="text"
@@ -162,6 +190,14 @@ const FormControl = ({ show }) => {
                                                     value={values.Blank4}
                                                 />
                                             </FloatingLabel>
+                                            <ErrorMessage
+                                                name="Blank4"
+                                                render={(msg) => (
+                                                    <div style={redStyle}>
+                                                        {msg}
+                                                    </div>
+                                                )}
+                                            />
                                         </div>
                                         <div className="col">
                                             <FloatingLabel label="Blank5">
@@ -174,6 +210,14 @@ const FormControl = ({ show }) => {
                                                     value={values.Blank5}
                                                 />
                                             </FloatingLabel>
+                                            <ErrorMessage
+                                                name="Blank5"
+                                                render={(msg) => (
+                                                    <div style={redStyle}>
+                                                        {msg}
+                                                    </div>
+                                                )}
+                                            />
                                             <FloatingLabel label="Blank6">
                                                 <Form.Control
                                                     type="text"
@@ -184,6 +228,14 @@ const FormControl = ({ show }) => {
                                                     value={values.Blank6}
                                                 />
                                             </FloatingLabel>
+                                            <ErrorMessage
+                                                name="Blank6"
+                                                render={(msg) => (
+                                                    <div style={redStyle}>
+                                                        {msg}
+                                                    </div>
+                                                )}
+                                            />
                                             <FloatingLabel label="Blank7">
                                                 <Form.Control
                                                     type="text"
@@ -194,6 +246,14 @@ const FormControl = ({ show }) => {
                                                     value={values.Blank7}
                                                 />
                                             </FloatingLabel>
+                                            <ErrorMessage
+                                                name="Blank7"
+                                                render={(msg) => (
+                                                    <div style={redStyle}>
+                                                        {msg}
+                                                    </div>
+                                                )}
+                                            />
                                         </div>
                                     </div>
                                 </Form.Group>
@@ -212,6 +272,12 @@ const FormControl = ({ show }) => {
                                             value={values.application}
                                         />
                                     </FloatingLabel>
+                                    <ErrorMessage
+                                        name="application"
+                                        render={(msg) => (
+                                            <div style={redStyle}>{msg}</div>
+                                        )}
+                                    />
                                     <FloatingLabel label="payment Period">
                                         <Form.Control
                                             placeholder="payment Period"
@@ -221,6 +287,12 @@ const FormControl = ({ show }) => {
                                             value={values.payment_period}
                                         />
                                     </FloatingLabel>
+                                    <ErrorMessage
+                                        name="payment_period"
+                                        render={(msg) => (
+                                            <div style={redStyle}>{msg}</div>
+                                        )}
+                                    />
                                     <div className="row">
                                         <div className="col">
                                             {" "}
@@ -234,6 +306,14 @@ const FormControl = ({ show }) => {
                                                     value={values.months_3}
                                                 />
                                             </FloatingLabel>
+                                            <ErrorMessage
+                                                name="months_3"
+                                                render={(msg) => (
+                                                    <div style={redStyle}>
+                                                        {msg}
+                                                    </div>
+                                                )}
+                                            />
                                             <FloatingLabel label="6 Months">
                                                 <Form.Control
                                                     type="number"
@@ -244,6 +324,14 @@ const FormControl = ({ show }) => {
                                                     value={values.months_6}
                                                 />
                                             </FloatingLabel>
+                                            <ErrorMessage
+                                                name="months_6"
+                                                render={(msg) => (
+                                                    <div style={redStyle}>
+                                                        {msg}
+                                                    </div>
+                                                )}
+                                            />
                                         </div>
                                         <div className="col">
                                             <FloatingLabel label="Cash">
@@ -256,6 +344,14 @@ const FormControl = ({ show }) => {
                                                     value={values.cash}
                                                 />
                                             </FloatingLabel>
+                                            <ErrorMessage
+                                                name="cash"
+                                                render={(msg) => (
+                                                    <div style={redStyle}>
+                                                        {msg}
+                                                    </div>
+                                                )}
+                                            />
                                             <FloatingLabel label="Plot Number">
                                                 <Form.Control
                                                     type="number"
@@ -266,6 +362,14 @@ const FormControl = ({ show }) => {
                                                     value={values.plot_number}
                                                 />
                                             </FloatingLabel>
+                                            <ErrorMessage
+                                                name="plot_number"
+                                                render={(msg) => (
+                                                    <div style={redStyle}>
+                                                        {msg}
+                                                    </div>
+                                                )}
+                                            />
                                         </div>
                                     </div>
                                     <FloatingLabel label="Other">
@@ -277,6 +381,12 @@ const FormControl = ({ show }) => {
                                             value={values.other}
                                         />
                                     </FloatingLabel>
+                                    <ErrorMessage
+                                        name="other"
+                                        render={(msg) => (
+                                            <div style={redStyle}>{msg}</div>
+                                        )}
+                                    />
                                     <FloatingLabel label="Monthly Instalment">
                                         <Form.Control
                                             placeholder="monthly_instalment"
@@ -286,6 +396,12 @@ const FormControl = ({ show }) => {
                                             value={values.monthly_instalment}
                                         />
                                     </FloatingLabel>
+                                    <ErrorMessage
+                                        name="monthly_instalment"
+                                        render={(msg) => (
+                                            <div style={redStyle}>{msg}</div>
+                                        )}
+                                    />
                                     <FloatingLabel label="Authorized Signatory">
                                         <Form.Control
                                             placeholder="authorized_signatory"
@@ -295,6 +411,12 @@ const FormControl = ({ show }) => {
                                             value={values.authorized_signatory}
                                         />
                                     </FloatingLabel>
+                                    <ErrorMessage
+                                        name="authorized_signatory"
+                                        render={(msg) => (
+                                            <div style={redStyle}>{msg}</div>
+                                        )}
+                                    />
                                 </Form.Group>
                                 <Form.Group>
                                     <Form.Label style={{ color: "#E5E3C9" }}>
@@ -312,6 +434,12 @@ const FormControl = ({ show }) => {
                                             }
                                         />
                                     </FloatingLabel>
+                                    <ErrorMessage
+                                        name="amount_of_initial_disposal"
+                                        render={(msg) => (
+                                            <div style={redStyle}>{msg}</div>
+                                        )}
+                                    />
                                 </Form.Group>
                             </div>
                         </div>
@@ -330,6 +458,12 @@ const FormControl = ({ show }) => {
                                             value={values.surname}
                                         />
                                     </FloatingLabel>
+                                    <ErrorMessage
+                                        name="surname"
+                                        render={(msg) => (
+                                            <div style={redStyle}>{msg}</div>
+                                        )}
+                                    />
                                     <FloatingLabel label="First Name">
                                         <Form.Control
                                             placeholder="first_name"
@@ -339,6 +473,12 @@ const FormControl = ({ show }) => {
                                             value={values.first_name}
                                         />
                                     </FloatingLabel>
+                                    <ErrorMessage
+                                        name="first_name"
+                                        render={(msg) => (
+                                            <div style={redStyle}>{msg}</div>
+                                        )}
+                                    />
                                     <InputGroup>
                                         <InputGroup.Text>Date</InputGroup.Text>
                                         <Form.Control
@@ -350,7 +490,12 @@ const FormControl = ({ show }) => {
                                             value={values.date}
                                         />
                                     </InputGroup>
-
+                                    <ErrorMessage
+                                        name="date"
+                                        render={(msg) => (
+                                            <div style={redStyle}>{msg}</div>
+                                        )}
+                                    />
                                     <label>{"Martial Status"}</label>
                                     <div className="row">
                                         <div className="col">
@@ -393,6 +538,14 @@ const FormControl = ({ show }) => {
                                                 value="Widowed"
                                             />
                                         </div>
+                                        <ErrorMessage
+                                            name="martial_status"
+                                            render={(msg) => (
+                                                <div style={redStyle}>
+                                                    {msg}
+                                                </div>
+                                            )}
+                                        />
                                     </div>
                                     <FloatingLabel label="Name Of Spouse">
                                         <Form.Control
@@ -403,6 +556,12 @@ const FormControl = ({ show }) => {
                                             value={values.name_of_spouse}
                                         />
                                     </FloatingLabel>
+                                    <ErrorMessage
+                                        name="name_of_spouse"
+                                        render={(msg) => (
+                                            <div style={redStyle}>{msg}</div>
+                                        )}
+                                    />
                                     <FloatingLabel label="Nationality">
                                         <Form.Control
                                             placeholder="nationality"
@@ -412,6 +571,12 @@ const FormControl = ({ show }) => {
                                             value={values.nationality}
                                         />
                                     </FloatingLabel>
+                                    <ErrorMessage
+                                        name="nationality"
+                                        render={(msg) => (
+                                            <div style={redStyle}>{msg}</div>
+                                        )}
+                                    />
                                     <FloatingLabel label="Physical Address">
                                         <Form.Control
                                             placeholder="physical_address"
@@ -421,6 +586,12 @@ const FormControl = ({ show }) => {
                                             value={values.physical_address}
                                         />
                                     </FloatingLabel>
+                                    <ErrorMessage
+                                        name="physical_address"
+                                        render={(msg) => (
+                                            <div style={redStyle}>{msg}</div>
+                                        )}
+                                    />
                                     <FloatingLabel label="Postal Address">
                                         <Form.Control
                                             placeholder="postal_address"
@@ -430,6 +601,12 @@ const FormControl = ({ show }) => {
                                             value={values.postal_address}
                                         />
                                     </FloatingLabel>
+                                    <ErrorMessage
+                                        name="postal_address"
+                                        render={(msg) => (
+                                            <div style={redStyle}>{msg}</div>
+                                        )}
+                                    />
                                     <FloatingLabel label="Employer">
                                         <Form.Control
                                             placeholder="employer"
@@ -439,6 +616,12 @@ const FormControl = ({ show }) => {
                                             value={values.employer}
                                         />
                                     </FloatingLabel>
+                                    <ErrorMessage
+                                        name="employer"
+                                        render={(msg) => (
+                                            <div style={redStyle}>{msg}</div>
+                                        )}
+                                    />
                                     <FloatingLabel label="Occupation">
                                         <Form.Control
                                             placeholder="occupation"
@@ -448,6 +631,12 @@ const FormControl = ({ show }) => {
                                             value={values.occupation}
                                         />
                                     </FloatingLabel>
+                                    <ErrorMessage
+                                        name="occupation"
+                                        render={(msg) => (
+                                            <div style={redStyle}>{msg}</div>
+                                        )}
+                                    />
                                     <FloatingLabel label="Tel No (Home)">
                                         <Form.Control
                                             placeholder="tel_no_home"
@@ -457,6 +646,12 @@ const FormControl = ({ show }) => {
                                             value={values.tel_no_home}
                                         />
                                     </FloatingLabel>
+                                    <ErrorMessage
+                                        name="tel_no_home"
+                                        render={(msg) => (
+                                            <div style={redStyle}>{msg}</div>
+                                        )}
+                                    />
                                     <FloatingLabel label="Cell">
                                         <Form.Control
                                             placeholder="cell"
@@ -466,6 +661,12 @@ const FormControl = ({ show }) => {
                                             value={values.cell}
                                         />
                                     </FloatingLabel>
+                                    <ErrorMessage
+                                        name="cell"
+                                        render={(msg) => (
+                                            <div style={redStyle}>{msg}</div>
+                                        )}
+                                    />
                                     <FloatingLabel label="Tel No (Business)">
                                         <Form.Control
                                             placeholder="tel_no_business"
@@ -475,6 +676,12 @@ const FormControl = ({ show }) => {
                                             value={values.tel_no_business}
                                         />
                                     </FloatingLabel>
+                                    <ErrorMessage
+                                        name="tel_no_business"
+                                        render={(msg) => (
+                                            <div style={redStyle}>{msg}</div>
+                                        )}
+                                    />
                                     <FloatingLabel label="Email">
                                         <Form.Control
                                             placeholder="email"
@@ -484,6 +691,12 @@ const FormControl = ({ show }) => {
                                             value={values.email}
                                         />
                                     </FloatingLabel>
+                                    <ErrorMessage
+                                        name="email"
+                                        render={(msg) => (
+                                            <div style={redStyle}>{msg}</div>
+                                        )}
+                                    />
                                 </Form.Group>
                             </div>
                             <div className="col">
@@ -500,6 +713,12 @@ const FormControl = ({ show }) => {
                                             value={values.name}
                                         />
                                     </FloatingLabel>
+                                    <ErrorMessage
+                                        name="name"
+                                        render={(msg) => (
+                                            <div style={redStyle}>{msg}</div>
+                                        )}
+                                    />
                                     <div className="row">
                                         <div className="col">
                                             <FloatingLabel label="Age">
@@ -512,6 +731,14 @@ const FormControl = ({ show }) => {
                                                     value={values.age}
                                                 />
                                             </FloatingLabel>
+                                            <ErrorMessage
+                                                name="age"
+                                                render={(msg) => (
+                                                    <div style={redStyle}>
+                                                        {msg}
+                                                    </div>
+                                                )}
+                                            />
                                         </div>
                                         <div className="col"></div>
                                     </div>
@@ -524,6 +751,12 @@ const FormControl = ({ show }) => {
                                             value={values.relationship}
                                         />
                                     </FloatingLabel>
+                                    <ErrorMessage
+                                        name="relationship"
+                                        render={(msg) => (
+                                            <div style={redStyle}>{msg}</div>
+                                        )}
+                                    />
                                 </Form.Group>
                                 <Form.Group>
                                     <Form.Label style={{ color: "#E5E3C9" }}>
@@ -541,6 +774,12 @@ const FormControl = ({ show }) => {
                                             }
                                         />
                                     </FloatingLabel>
+                                    <ErrorMessage
+                                        name="glen_forest_memorial_park"
+                                        render={(msg) => (
+                                            <div style={redStyle}>{msg}</div>
+                                        )}
+                                    />
                                     <div className="row">
                                         <div className="col">
                                             <FloatingLabel label="chemhute Park">
@@ -553,6 +792,14 @@ const FormControl = ({ show }) => {
                                                     value={values.chemhute_park}
                                                 />
                                             </FloatingLabel>
+                                            <ErrorMessage
+                                                name="chemhute_park"
+                                                render={(msg) => (
+                                                    <div style={redStyle}>
+                                                        {msg}
+                                                    </div>
+                                                )}
+                                            />
                                             <FloatingLabel label="Matidoda Park">
                                                 <Form.Control
                                                     type="number"
@@ -563,6 +810,14 @@ const FormControl = ({ show }) => {
                                                     value={values.matidoda_park}
                                                 />
                                             </FloatingLabel>
+                                            <ErrorMessage
+                                                name="matidoda_park"
+                                                render={(msg) => (
+                                                    <div style={redStyle}>
+                                                        {msg}
+                                                    </div>
+                                                )}
+                                            />
                                             <FloatingLabel label="Single Unit">
                                                 <Form.Control
                                                     type="number"
@@ -573,6 +828,14 @@ const FormControl = ({ show }) => {
                                                     value={values.single_unit}
                                                 />
                                             </FloatingLabel>
+                                            <ErrorMessage
+                                                name="single_unit"
+                                                render={(msg) => (
+                                                    <div style={redStyle}>
+                                                        {msg}
+                                                    </div>
+                                                )}
+                                            />
                                         </div>
                                         <div className="col">
                                             <FloatingLabel label="Double Unit">
@@ -585,6 +848,14 @@ const FormControl = ({ show }) => {
                                                     value={values.double_unit}
                                                 />
                                             </FloatingLabel>
+                                            <ErrorMessage
+                                                name="double_unit"
+                                                render={(msg) => (
+                                                    <div style={redStyle}>
+                                                        {msg}
+                                                    </div>
+                                                )}
+                                            />
                                             <FloatingLabel label="Triple Unit">
                                                 <Form.Control
                                                     type="number"
@@ -595,6 +866,14 @@ const FormControl = ({ show }) => {
                                                     value={values.triple_unit}
                                                 />
                                             </FloatingLabel>
+                                            <ErrorMessage
+                                                name="triple_unit"
+                                                render={(msg) => (
+                                                    <div style={redStyle}>
+                                                        {msg}
+                                                    </div>
+                                                )}
+                                            />
                                             <FloatingLabel label="Family Close">
                                                 <Form.Control
                                                     type="number"
@@ -605,6 +884,14 @@ const FormControl = ({ show }) => {
                                                     value={values.family_close}
                                                 />
                                             </FloatingLabel>
+                                            <ErrorMessage
+                                                name="family_close"
+                                                render={(msg) => (
+                                                    <div style={redStyle}>
+                                                        {msg}
+                                                    </div>
+                                                )}
+                                            />
                                         </div>
                                         <FloatingLabel label="Other Detail (please give details) ">
                                             <Form.Control
@@ -618,6 +905,14 @@ const FormControl = ({ show }) => {
                                                 style={{ height: "120px" }}
                                             />
                                         </FloatingLabel>
+                                        <ErrorMessage
+                                            name="other_detail"
+                                            render={(msg) => (
+                                                <div style={redStyle}>
+                                                    {msg}
+                                                </div>
+                                            )}
+                                        />
                                     </div>
                                 </Form.Group>
                                 <Form.Group>
@@ -636,6 +931,12 @@ const FormControl = ({ show }) => {
                                             style={{ height: "140px" }}
                                         />
                                     </FloatingLabel>
+                                    <ErrorMessage
+                                        name="terms_table"
+                                        render={(msg) => (
+                                            <div style={redStyle}>{msg}</div>
+                                        )}
+                                    />
                                 </Form.Group>
                             </div>
                         </div>

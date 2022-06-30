@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+import { toast } from "react-toastify";
 import style from "../../../css/app.css";
 import CertificateForm from "../SingleModals/CertificateForm";
 import DeclarationForm from "../SingleModals/DeclarationForm";
@@ -11,11 +12,10 @@ import TermsAndConditionsForm from "../SingleModals/TermsAndConditionsForm";
 import TypesOfProductPurchasedForm from "../SingleModals/TypesOfProductPurchasedForm";
 
 export const updateUsers = (state, url) => {
-    axios.post(`update/${url}/user`, state).then((response) => {});
-};
-export const addUsers = (state, url) => {
-    // axios.post(`add/${url}/user`, state).then((response) => {});
-    console.log("ADD CALLED" + state + "  " + url);
+    axios.post(`update/${url}/user`, state).then((response) => {
+        toast("user Updated");
+    });
+    location.reload();
 };
 
 const UpdateModal = ({ url, modalId, data }) => {
