@@ -21,9 +21,7 @@ const ModeOfPayment = () => {
             <table className="table table-hover ">
                 <thead>
                     <tr>
-                        <th scope="col" width="50px">
-                            #
-                        </th>
+                        <th scope="col" width="50px"></th>
                         <th scope="col" width="50px">
                             3 Months
                         </th>

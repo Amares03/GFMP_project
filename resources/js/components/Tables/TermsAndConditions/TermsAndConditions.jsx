@@ -22,9 +22,7 @@ const TermsAndConditions = () => {
             <table className="table table-hover ">
                 <thead>
                     <tr>
-                        <th scope="col" width="50px">
-                            #
-                        </th>
+                        <th scope="col" width="50px"></th>
                         <th scope="col" width="50px">
                             Terms Table
                         </th>

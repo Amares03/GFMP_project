@@ -32,7 +32,7 @@ function App() {
                             // size="xl"
                             // className="btn btn-light"
                             style={{
-                                width: "200px",
+                                width: "240px",
                                 height: "40px",
                                 marginTop: "0",
                             }}

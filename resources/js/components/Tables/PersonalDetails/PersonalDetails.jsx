@@ -23,7 +23,7 @@ const PersonalDetails = () => {
             <Table responsive>
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col"></th>
                         <th scope="col">Surname</th>
                         <th scope="col">First Name</th>
                         <th scope="col">date</th>
