@@ -1,6 +1,7 @@
 import React, { Component, useLayoutEffect, useState } from "react";
 import axios from "axios";
 import TablesRow from "../TablesRow";
+import { Table } from "react-bootstrap";
 
 const CertificateTable = () => {
     const [tableData, setTableData] = useState([]);
@@ -16,12 +17,10 @@ const CertificateTable = () => {
     return (
         <>
             <h4 className="text-left mt-3">Certificate Table</h4>
-            <table className="table table-hover ">
+            <Table responsive>
                 <thead>
                     <tr>
-                        <th scope="col" width="100px">
-                            #
-                        </th>
+                        <th scope="col" width="100px"></th>
                         <th scope="col" width="100px">
                             Certificate
                         </th>
@@ -35,7 +34,7 @@ const CertificateTable = () => {
                         );
                     })}
                 </tbody>
-            </table>
+            </Table>
         </>
     );
 };

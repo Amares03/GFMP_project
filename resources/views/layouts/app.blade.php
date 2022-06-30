@@ -78,7 +78,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4"style="margin:0;padding:0;">
             @yield('content')
         </main>
          <footer class="footer mt-auto py-3" >

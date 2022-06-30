@@ -22,9 +22,7 @@ const DeclarationTable = () => {
             <table className="table table-hover ">
                 <thead>
                     <tr>
-                        <th scope="col" width="100px">
-                            #
-                        </th>
+                        <th scope="col" width="100px"></th>
                         <th scope="col" width="100px">
                             Blank1
                         </th>

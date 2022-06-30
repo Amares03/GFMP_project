@@ -16,21 +16,14 @@ const Table = () => {
         <>
             <div className="container">
                 <ToastContainer />
-
-                <div className="row justify-content-center">
-                    <div className="col-md-8">
-                        {/* <div className="card"> */}
-                        <CertificateTable />
-                        <DeclarationTable />
-                        <ForOfficeUse />
-                        <ModeOfPayment />
-                        <NominatedBeneficiaries />
-                        <PersonalDetails />
-                        <TermsAndConditions />
-                        <TypesOfProductPurchased />
-                        {/* </div> */}
-                    </div>
-                </div>
+                <CertificateTable />
+                <DeclarationTable />
+                <ForOfficeUse />
+                <ModeOfPayment />
+                <NominatedBeneficiaries />
+                <PersonalDetails />
+                <TermsAndConditions />
+                <TypesOfProductPurchased />
             </div>
         </>
     );

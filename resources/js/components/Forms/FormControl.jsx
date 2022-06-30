@@ -9,6 +9,7 @@ import {
     FloatingLabel,
     Form,
     InputGroup,
+    Button,
 } from "react-bootstrap";
 function convertDate(date) {
     var yyyy = date.getFullYear().toString();
@@ -95,88 +96,104 @@ const FormControl = ({ show }) => {
                 onSubmit={handleSubmit}
             >
                 {({ values, handleChange, handleSubmit, handleBlur }) => (
-                    <Form onSubmit={handleSubmit}>
+                    <Form onSubmit={handleSubmit} style={{ color: "#1B2430" }}>
                         <div className="row">
                             <div className="col">
                                 <Form.Group>
                                     <Form.Label style={{ color: "#E5E3C9" }}>
                                         Certificate
                                     </Form.Label>
-                                    <Form.Control
-                                        as="textarea"
-                                        rows={3}
-                                        placeholder="Certificate"
-                                        name="certificate"
-                                        onChange={handleChange}
-                                        onBlur={handleBlur}
-                                        value={values.certificate}
-                                    />
+                                    <FloatingLabel label="Certificate">
+                                        <Form.Control
+                                            as="textarea"
+                                            rows={3}
+                                            placeholder="Certificate"
+                                            name="certificate"
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            value={values.certificate}
+                                        />
+                                    </FloatingLabel>
                                 </Form.Group>
                                 <Form.Group>
                                     <Form.Label style={{ color: "#E5E3C9" }}>
                                         Declaration
                                     </Form.Label>
-                                    <Form.Control
-                                        type="text"
-                                        placeholder="Blank1"
-                                        name="Blank1"
-                                        onChange={handleChange}
-                                        onBlur={handleBlur}
-                                        value={values.Blank1}
-                                    />
+                                    <FloatingLabel label="Blank1">
+                                        <Form.Control
+                                            type="text"
+                                            placeholder="Blank1"
+                                            name="Blank1"
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            value={values.Blank1}
+                                        />
+                                    </FloatingLabel>
                                     <div className="row">
                                         <div className="col">
                                             {" "}
-                                            <Form.Control
-                                                type="text"
-                                                placeholder="Blank2"
-                                                name="Blank2"
-                                                onChange={handleChange}
-                                                onBlur={handleBlur}
-                                                value={values.Blank2}
-                                            />
-                                            <Form.Control
-                                                type="text"
-                                                placeholder="Blank3"
-                                                name="Blank3"
-                                                onChange={handleChange}
-                                                onBlur={handleBlur}
-                                                value={values.Blank3}
-                                            />
-                                            <Form.Control
-                                                type="text"
-                                                placeholder="Blank4"
-                                                name="Blank4"
-                                                onChange={handleChange}
-                                                onBlur={handleBlur}
-                                                value={values.Blank4}
-                                            />
+                                            <FloatingLabel label="Blank2">
+                                                <Form.Control
+                                                    type="text"
+                                                    placeholder="Blank2"
+                                                    name="Blank2"
+                                                    onChange={handleChange}
+                                                    onBlur={handleBlur}
+                                                    value={values.Blank2}
+                                                />
+                                            </FloatingLabel>
+                                            <FloatingLabel label="Blank3">
+                                                <Form.Control
+                                                    type="text"
+                                                    placeholder="Blank3"
+                                                    name="Blank3"
+                                                    onChange={handleChange}
+                                                    onBlur={handleBlur}
+                                                    value={values.Blank3}
+                                                />
+                                            </FloatingLabel>
+                                            <FloatingLabel label="Blank4">
+                                                <Form.Control
+                                                    type="text"
+                                                    placeholder="Blank4"
+                                                    name="Blank4"
+                                                    onChange={handleChange}
+                                                    onBlur={handleBlur}
+                                                    value={values.Blank4}
+                                                />
+                                            </FloatingLabel>
                                         </div>
                                         <div className="col">
-                                            <Form.Control
-                                                type="text"
-                                                placeholder="Blank5"
-                                                name="Blank5"
-                                                onChange={handleChange}
-                                                onBlur={handleBlur}
-                                                value={values.Blank5}
-                                            />
-                                            <Form.Control
-                                                type="text"
-                                                placeholder="Blank6"
-                                                name="Blank6"
-                                                onChange={handleChange}
-                                                onBlur={handleBlur}
-                                                value={values.Blank6}
-                                            />
-                                            <Form.Control
-                                                type="text"
-                                                placeholder="Blank7"
-                                                name="Blank7"
-                                                onChange={handleChange}
-                                                onBlur={handleBlur}
-                                                value={values.Blank7}
-                                            />
+                                            <FloatingLabel label="Blank5">
+                                                <Form.Control
+                                                    type="text"
+                                                    placeholder="Blank5"
+                                                    name="Blank5"
+                                                    onChange={handleChange}
+                                                    onBlur={handleBlur}
+                                                    value={values.Blank5}
+                                                />
+                                            </FloatingLabel>
+                                            <FloatingLabel label="Blank6">
+                                                <Form.Control
+                                                    type="text"
+                                                    placeholder="Blank6"
+                                                    name="Blank6"
+                                                    onChange={handleChange}
+                                                    onBlur={handleBlur}
+                                                    value={values.Blank6}
+                                                />
+                                            </FloatingLabel>
+                                            <FloatingLabel label="Blank7">
+                                                <Form.Control
+                                                    type="text"
+                                                    placeholder="Blank7"
+                                                    name="Blank7"
+                                                    onChange={handleChange}
+                                                    onBlur={handleBlur}
+                                                    value={values.Blank7}
+                                                />
+                                            </FloatingLabel>
                                         </div>
                                     </div>
                                 </Form.Group>
@@ -186,243 +203,119 @@ const FormControl = ({ show }) => {
                                     <Form.Label style={{ color: "#E5E3C9" }}>
                                         {"For Office Use"}
                                     </Form.Label>
-                                    <Form.Control
-                                        placeholder="application"
-                                        name="application"
-                                        onChange={handleChange}
-                                        onBlur={handleBlur}
-                                        value={values.application}
-                                    />
-                                    <Form.Control
-                                        placeholder="payment Period"
-                                        name="payment_period"
-                                        onChange={handleChange}
-                                        onBlur={handleBlur}
-                                        value={values.payment_period}
-                                    />
+                                    <FloatingLabel label="application">
+                                        <Form.Control
+                                            placeholder="application"
+                                            name="application"
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            value={values.application}
+                                        />
+                                    </FloatingLabel>
+                                    <FloatingLabel label="payment Period">
+                                        <Form.Control
+                                            placeholder="payment Period"
+                                            name="payment_period"
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            value={values.payment_period}
+                                        />
+                                    </FloatingLabel>
                                     <div className="row">
                                         <div className="col">
                                             {" "}
-                                            <Form.Control
-                                                type="number"
-                                                placeholder="3 Months"
-                                                name="months_3"
-                                                onChange={handleChange}
-                                                onBlur={handleBlur}
-                                                value={values.months_3}
-                                            />
-                                            <Form.Control
-                                                type="number"
-                                                placeholder="6 Months"
-                                                name="months_6"
-                                                onChange={handleChange}
-                                                onBlur={handleBlur}
-                                                value={values.months_6}
-                                            />
+                                            <FloatingLabel label="3 Months">
+                                                <Form.Control
+                                                    type="number"
+                                                    placeholder="3 Months"
+                                                    name="months_3"
+                                                    onChange={handleChange}
+                                                    onBlur={handleBlur}
+                                                    value={values.months_3}
+                                                />
+                                            </FloatingLabel>
+                                            <FloatingLabel label="6 Months">
+                                                <Form.Control
+                                                    type="number"
+                                                    placeholder="6 Months"
+                                                    name="months_6"
+                                                    onChange={handleChange}
+                                                    onBlur={handleBlur}
+                                                    value={values.months_6}
+                                                />
+                                            </FloatingLabel>
                                         </div>
                                         <div className="col">
-                                            <Form.Control
-                                                type="number"
-                                                placeholder="Cash"
-                                                name="cash"
-                                                onChange={handleChange}
-                                                onBlur={handleBlur}
-                                                value={values.cash}
-                                            />
-                                            <Form.Control
-                                                type="number"
-                                                placeholder="Plot Number"
-                                                name="plot_number"
-                                                onChange={handleChange}
-                                                onBlur={handleBlur}
-                                                value={values.plot_number}
-                                            />
+                                            <FloatingLabel label="Cash">
+                                                <Form.Control
+                                                    type="number"
+                                                    placeholder="Cash"
+                                                    name="cash"
+                                                    onChange={handleChange}
+                                                    onBlur={handleBlur}
+                                                    value={values.cash}
+                                                />
+                                            </FloatingLabel>
+                                            <FloatingLabel label="Plot Number">
+                                                <Form.Control
+                                                    type="number"
+                                                    placeholder="Plot Number"
+                                                    name="plot_number"
+                                                    onChange={handleChange}
+                                                    onBlur={handleBlur}
+                                                    value={values.plot_number}
+                                                />
+                                            </FloatingLabel>
                                         </div>
                                     </div>
-                                    <Form.Control
-                                        placeholder="other"
-                                        name="Other"
-                                        onChange={handleChange}
-                                        onBlur={handleBlur}
-                                        value={values.other}
-                                    />
-                                    <Form.Control
-                                        placeholder="monthly_instalment"
-                                        name="Monthly Instalment"
-                                        onChange={handleChange}
-                                        onBlur={handleBlur}
-                                        value={values.monthly_instalment}
-                                    />
-                                    <Form.Control
-                                        placeholder="authorized_signatory"
-                                        name="Authorized Signatory"
-                                        onChange={handleChange}
-                                        onBlur={handleBlur}
-                                        value={values.authorized_signatory}
-                                    />
+                                    <FloatingLabel label="Other">
+                                        <Form.Control
+                                            placeholder="other"
+                                            name="other"
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            value={values.other}
+                                        />
+                                    </FloatingLabel>
+                                    <FloatingLabel label="Monthly Instalment">
+                                        <Form.Control
+                                            placeholder="monthly_instalment"
+                                            name="monthly_instalment"
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            value={values.monthly_instalment}
+                                        />
+                                    </FloatingLabel>
+                                    <FloatingLabel label="Authorized Signatory">
+                                        <Form.Control
+                                            placeholder="authorized_signatory"
+                                            name="authorized_signatory"
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            value={values.authorized_signatory}
+                                        />
+                                    </FloatingLabel>
                                 </Form.Group>
                                 <Form.Group>
                                     <Form.Label style={{ color: "#E5E3C9" }}>
                                         {"Mode of payment"}
                                     </Form.Label>
-                                    <Form.Control
-                                        type="number"
-                                        placeholder="Amount Of Initial Disposal"
-                                        name="amount_of_initial_disposal"
-                                        onChange={handleChange}
-                                        onBlur={handleBlur}
-                                        value={
-                                            values.amount_of_initial_disposal
-                                        }
-                                    />
+                                    <FloatingLabel label="Amount Of Initial Disposal">
+                                        <Form.Control
+                                            type="number"
+                                            placeholder="Amount Of Initial Disposal"
+                                            name="amount_of_initial_disposal"
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            value={
+                                                values.amount_of_initial_disposal
+                                            }
+                                        />
+                                    </FloatingLabel>
                                 </Form.Group>
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col">
-                                <Form.Group>
-                                    <Form.Label style={{ color: "#E5E3C9" }}>
-                                        {"Nominated Beneficiaries"}
-                                    </Form.Label>
-                                    <Form.Control
-                                        placeholder="Name"
-                                        name="name"
-                                        onChange={handleChange}
-                                        onBlur={handleBlur}
-                                        value={values.name}
-                                    />
-                                    <div className="row">
-                                        <div className="col">
-                                            <Form.Control
-                                                type="number"
-                                                placeholder="Age"
-                                                name="age"
-                                                onChange={handleChange}
-                                                onBlur={handleBlur}
-                                                value={values.age}
-                                            />
-                                        </div>
-                                        <div className="col"></div>
-                                    </div>
-                                    <Form.Control
-                                        placeholder="Relationship"
-                                        name="relationship"
-                                        onChange={handleChange}
-                                        onBlur={handleBlur}
-                                        value={values.relationship}
-                                    />
-                                </Form.Group>
-                                <Form.Group>
-                                    <Form.Label style={{ color: "#E5E3C9" }}>
-                                        {"Types Of Product Purchased"}
-                                    </Form.Label>
-                                    <FloatingLabel label="Glen Forest Memorial Park">
-                                        <Form.Control
-                                            type="number"
-                                            placeholder="Glen Forest Memorial Park"
-                                            name="glen_forest_memorial_park"
-                                            onChange={handleChange}
-                                            onBlur={handleBlur}
-                                            value={
-                                                values.glen_forest_memorial_park
-                                            }
-                                        />
-                                    </FloatingLabel>
-                                    <div className="row">
-                                        <div className="col">
-                                            <FloatingLabel label="chemhute Park">
-                                                <Form.Control
-                                                    type="number"
-                                                    placeholder="chemhute_park"
-                                                    name="chemhute_park"
-                                                    onChange={handleChange}
-                                                    onBlur={handleBlur}
-                                                    value={values.chemhute_park}
-                                                />
-                                            </FloatingLabel>
-                                            <FloatingLabel label="Matidoda Park">
-                                                <Form.Control
-                                                    type="number"
-                                                    placeholder="matidoda_park"
-                                                    name="matidoda_park"
-                                                    onChange={handleChange}
-                                                    onBlur={handleBlur}
-                                                    value={values.matidoda_park}
-                                                />
-                                            </FloatingLabel>
-                                            <FloatingLabel label="Single Unit">
-                                                <Form.Control
-                                                    type="number"
-                                                    placeholder="single_unit"
-                                                    name="single_unit"
-                                                    onChange={handleChange}
-                                                    onBlur={handleBlur}
-                                                    value={values.single_unit}
-                                                />
-                                            </FloatingLabel>
-                                        </div>
-                                        <div className="col">
-                                            <FloatingLabel label="Double Unit">
-                                                <Form.Control
-                                                    type="number"
-                                                    placeholder="double_unit"
-                                                    name="double_unit"
-                                                    onChange={handleChange}
-                                                    onBlur={handleBlur}
-                                                    value={values.double_unit}
-                                                />
-                                            </FloatingLabel>
-                                            <FloatingLabel label="Triple Unit">
-                                                <Form.Control
-                                                    type="number"
-                                                    placeholder="triple_unit"
-                                                    name="triple_unit"
-                                                    onChange={handleChange}
-                                                    onBlur={handleBlur}
-                                                    value={values.triple_unit}
-                                                />
-                                            </FloatingLabel>
-                                            <FloatingLabel label="Family Close">
-                                                <Form.Control
-                                                    type="number"
-                                                    placeholder="family_close"
-                                                    name="family_close"
-                                                    onChange={handleChange}
-                                                    onBlur={handleBlur}
-                                                    value={values.family_close}
-                                                />
-                                            </FloatingLabel>
-                                        </div>
-                                        <FloatingLabel label="Other Detail (please give details) ">
-                                            <Form.Control
-                                                as="textarea"
-                                                rows={4}
-                                                placeholder="other_detail"
-                                                name="other_detail"
-                                                onChange={handleChange}
-                                                onBlur={handleBlur}
-                                                value={values.other_detail}
-                                            />
-                                        </FloatingLabel>
-                                    </div>
-                                </Form.Group>
-                                <Form.Group>
-                                    <Form.Label style={{ color: "#E5E3C9" }}>
-                                        {"Terms And Conditions"}
-                                    </Form.Label>
-                                    <FloatingLabel label="Terms Table">
-                                        <Form.Control
-                                            as="textarea"
-                                            rows={7}
-                                            placeholder="terms_table"
-                                            name="terms_table"
-                                            onChange={handleChange}
-                                            onBlur={handleBlur}
-                                            value={values.terms_table}
-                                        />
-                                    </FloatingLabel>
-                                </Form.Group>
-                            </div>
                             <div className="col">
                                 <Form.Group>
                                     <Form.Label style={{ color: "#E5E3C9" }}>
@@ -593,12 +486,196 @@ const FormControl = ({ show }) => {
                                     </FloatingLabel>
                                 </Form.Group>
                             </div>
+                            <div className="col">
+                                <Form.Group>
+                                    <Form.Label style={{ color: "#E5E3C9" }}>
+                                        {"Nominated Beneficiaries"}
+                                    </Form.Label>
+                                    <FloatingLabel label="Name">
+                                        <Form.Control
+                                            placeholder="Name"
+                                            name="name"
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            value={values.name}
+                                        />
+                                    </FloatingLabel>
+                                    <div className="row">
+                                        <div className="col">
+                                            <FloatingLabel label="Age">
+                                                <Form.Control
+                                                    type="number"
+                                                    placeholder="Age"
+                                                    name="age"
+                                                    onChange={handleChange}
+                                                    onBlur={handleBlur}
+                                                    value={values.age}
+                                                />
+                                            </FloatingLabel>
+                                        </div>
+                                        <div className="col"></div>
+                                    </div>
+                                    <FloatingLabel label="Relationship">
+                                        <Form.Control
+                                            placeholder="Relationship"
+                                            name="relationship"
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            value={values.relationship}
+                                        />
+                                    </FloatingLabel>
+                                </Form.Group>
+                                <Form.Group>
+                                    <Form.Label style={{ color: "#E5E3C9" }}>
+                                        {"Types Of Product Purchased"}
+                                    </Form.Label>
+                                    <FloatingLabel label="Glen Forest Memorial Park">
+                                        <Form.Control
+                                            type="number"
+                                            placeholder="Glen Forest Memorial Park"
+                                            name="glen_forest_memorial_park"
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            value={
+                                                values.glen_forest_memorial_park
+                                            }
+                                        />
+                                    </FloatingLabel>
+                                    <div className="row">
+                                        <div className="col">
+                                            <FloatingLabel label="chemhute Park">
+                                                <Form.Control
+                                                    type="number"
+                                                    placeholder="chemhute_park"
+                                                    name="chemhute_park"
+                                                    onChange={handleChange}
+                                                    onBlur={handleBlur}
+                                                    value={values.chemhute_park}
+                                                />
+                                            </FloatingLabel>
+                                            <FloatingLabel label="Matidoda Park">
+                                                <Form.Control
+                                                    type="number"
+                                                    placeholder="matidoda_park"
+                                                    name="matidoda_park"
+                                                    onChange={handleChange}
+                                                    onBlur={handleBlur}
+                                                    value={values.matidoda_park}
+                                                />
+                                            </FloatingLabel>
+                                            <FloatingLabel label="Single Unit">
+                                                <Form.Control
+                                                    type="number"
+                                                    placeholder="single_unit"
+                                                    name="single_unit"
+                                                    onChange={handleChange}
+                                                    onBlur={handleBlur}
+                                                    value={values.single_unit}
+                                                />
+                                            </FloatingLabel>
+                                        </div>
+                                        <div className="col">
+                                            <FloatingLabel label="Double Unit">
+                                                <Form.Control
+                                                    type="number"
+                                                    placeholder="double_unit"
+                                                    name="double_unit"
+                                                    onChange={handleChange}
+                                                    onBlur={handleBlur}
+                                                    value={values.double_unit}
+                                                />
+                                            </FloatingLabel>
+                                            <FloatingLabel label="Triple Unit">
+                                                <Form.Control
+                                                    type="number"
+                                                    placeholder="triple_unit"
+                                                    name="triple_unit"
+                                                    onChange={handleChange}
+                                                    onBlur={handleBlur}
+                                                    value={values.triple_unit}
+                                                />
+                                            </FloatingLabel>
+                                            <FloatingLabel label="Family Close">
+                                                <Form.Control
+                                                    type="number"
+                                                    placeholder="family_close"
+                                                    name="family_close"
+                                                    onChange={handleChange}
+                                                    onBlur={handleBlur}
+                                                    value={values.family_close}
+                                                />
+                                            </FloatingLabel>
+                                        </div>
+                                        <FloatingLabel label="Other Detail (please give details) ">
+                                            <Form.Control
+                                                as="textarea"
+                                                // rows={4}
+                                                placeholder="other_detail"
+                                                name="other_detail"
+                                                onChange={handleChange}
+                                                onBlur={handleBlur}
+                                                value={values.other_detail}
+                                                style={{ height: "120px" }}
+                                            />
+                                        </FloatingLabel>
+                                    </div>
+                                </Form.Group>
+                                <Form.Group>
+                                    <Form.Label style={{ color: "#E5E3C9" }}>
+                                        {"Terms And Conditions"}
+                                    </Form.Label>
+                                    <FloatingLabel label="Terms Table">
+                                        <Form.Control
+                                            as="textarea"
+                                            // rows={7}
+                                            placeholder="terms_table"
+                                            name="terms_table"
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            value={values.terms_table}
+                                            style={{ height: "140px" }}
+                                        />
+                                    </FloatingLabel>
+                                </Form.Group>
+                            </div>
                         </div>
+                        <div className="row">
+                            <div className="col">{"  "}</div>
+                            <div className="col">
+                                <div className="row">
+                                    <div className="col"> </div>
+                                    <div className="col">
+                                        <div className="row">
+                                            <Button
+                                                type="submit"
+                                                // variant="success"
+                                                style={{
+                                                    backgroundColor: "#9EB23A",
+                                                    color: "#FCF9C6",
+                                                    marginRight: "20px",
+                                                    width: "120px",
+                                                }}
+                                                size="xl"
+                                            >
+                                                Submit
+                                            </Button>
 
-                        {/* ***************************************************** */}
-
-                        <button type="submit">Submit</button>
-                        <button onClick={() => show(false)}>Cancel</button>
+                                            <Button
+                                                onClick={() => show(false)}
+                                                size="xl"
+                                                variant="danger"
+                                                style={{
+                                                    color: "#FCF9C6",
+                                                    width: "120px",
+                                                }}
+                                            >
+                                                Cancel
+                                            </Button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </Form>
                 )}
             </Formik>

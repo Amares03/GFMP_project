@@ -12,38 +12,40 @@ function App() {
     const [showForm, setShowForm] = useState(false);
     return (
         <Provider store={store}>
-            <div className="container">
-                <div className="row justify-content-center">
-                    {/* components go here */}
-                    {showForm ? (
-                        // <CreateForm setShowForm={setShowForm} />
-                        <Card
+            <div className="container" style={{ padding: "0", margin: "0" }}>
+                {/* components go here */}
+                {showForm ? (
+                    <Card
+                        style={{
+                            backgroundColor: "#F7F7F7",
+                            color: "#9EB23B",
+                        }}
+                    >
+                        <Card.Body>
+                            <FormControl show={setShowForm} />
+                        </Card.Body>
+                    </Card>
+                ) : (
+                    <div className="col">
+                        <Button
+                            variant="light"
+                            // size="xl"
+                            // className="btn btn-light"
                             style={{
-                                backgroundColor: "#F7F7F7",
-                                color: "#9EB23B",
+                                width: "200px",
+                                height: "40px",
+                                marginTop: "0",
+                            }}
+                            onClick={() => {
+                                setShowForm(true);
                             }}
                         >
-                            <Card.Body>
-                                <FormControl show={setShowForm} />
-                            </Card.Body>
-                        </Card>
-                    ) : (
-                        <div className="col">
-                            <Button
-                                variant="light"
-                                size="xl"
-                                // className="btn btn-light"
-                                onClick={() => {
-                                    setShowForm(true);
-                                }}
-                            >
-                                <span>{"ADD USER "}</span>
-                                <FaPlus />
-                            </Button>
-                        </div>
-                    )}
-                    <Table />
-                </div>
+                            <span>{"ADD USER "}</span>
+                            <FaPlus />
+                        </Button>
+                    </div>
+                )}
+                <Table />
             </div>
         </Provider>
     );
