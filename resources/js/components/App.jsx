@@ -19,7 +19,7 @@ function App() {
                         // <CreateForm setShowForm={setShowForm} />
                         <Card
                             style={{
-                                backgroundColor: "#F4FCD9",
+                                backgroundColor: "#F7F7F7",
                                 color: "#9EB23B",
                             }}
                         >
