@@ -56,5 +56,5 @@ jobs:
         with:
           app-name: 'glenforest'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7BB9F091ABCB4E12BFFC3556334E1682 }}
+          publish-profile: ${{ secrets.AZURE_CREDENTIALS }}
           package: .
