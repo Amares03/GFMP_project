@@ -84,20 +84,21 @@
             }
         </style>
     </head>
-    <body class="d-flex h-100 text-center text-white bg-dark">
+    <body class="d-flex h-100 text-center " style=" background-color:#2C3639; color:#FFFFFF">
+      
         <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column" >
-            <header class="mb-auto">
+            <header class="mb-auto" style=" background-color:#2C3639D0;">
                 <div>
-                    <h3 class="float-md-start mb-0 ">GFMP LOGO HERE</h3>
-                    <nav class="nav nav-masthead justify-content-center float-md-end">
+                    <h3 class="float-md-start m-3" style="color:#D4D925">GFMP LOGO HERE</h3>
+                    <nav class="nav nav-masthead justify-content-center float-md-end" >
                         @if (Route::has('login'))
                                 @auth
-                                    <a href="{{ url('/home') }}" class="nav-link fw-bold py-1 px-0">Home</a>
+                                    <a href="{{ url('/home') }}" class="nav-link fw-bold py-1 m-2 px-0">Home</a>
                                 @else
-                                    <a href="{{ route('login') }}" class="nav-link fw-bold py-1 px-0">Log in</a>
+                                    <a href="{{ route('login') }}" class="nav-link fw-bold py-1 m-2 px-0">Log in</a>
             
                                     @if (Route::has('register'))
-                                        <a href="{{ route('register') }}" class="nav-link fw-bold py-1 px-0">Register</a>
+                                        <a href="{{ route('register') }}" class="nav-link fw-bold py-1 m-2 px-0">Register</a>
                                     @endif
                                 @endauth
                             
