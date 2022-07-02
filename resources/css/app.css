@@ -4,3 +4,7 @@
     backdrop-filter: blur(8px);
     border: 1px solid rgba(178, 157, 78, 0.1);
 }
+
+.bgraund {
+    background-image: url("../../public/assets/bg1.jpg");
+}

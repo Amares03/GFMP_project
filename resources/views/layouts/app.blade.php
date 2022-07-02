@@ -19,10 +19,15 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+        .form-floating{
+            margin-bottom: 5px;
+        }
+    </style>
 </head>
 <body>
     <div id="app"style="background-color: #FFFFFF;">
-        <nav class="navbar navbar-expand-xl sticky-top navbar-light shadow-sm" style="background-color: #9EB23B;">
+        <nav class="navbar navbar-expand-xl sticky-top navbar-light shadow-sm" style="background-color: #9EB23B; height: 80px;">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}" style="color: #FCF9C6;">
                     <strong>
