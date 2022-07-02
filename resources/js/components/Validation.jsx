@@ -14,18 +14,30 @@ export const validate = Yup.object({
     // forOfficeUse
     application: Yup.string().required("Required"),
     payment_period: Yup.string().required("Required"),
-    cash: Yup.number().required("Required"),
-    months_3: Yup.number().required("Required"),
-    months_6: Yup.number().required("Required"),
+    cash: Yup.number("must be Number")
+        .typeError("Amount must be a number")
+        .required("Required"),
+    months_3: Yup.number("must be Number")
+        .typeError("Amount must be a number")
+        .required("Required"),
+    months_6: Yup.number("must be Number")
+        .typeError("Amount must be a number")
+        .required("Required"),
     other: Yup.string().required("Required"),
     monthly_instalment: Yup.string().required("Required"),
     authorized_signatory: Yup.string().required("Required"),
-    plot_number: Yup.number().required("Required"),
+    plot_number: Yup.number("must be Number")
+        .typeError("Amount must be a number")
+        .required("Required"),
     // modeOfPayment
-    amount_of_initial_disposal: Yup.number().required("Required"),
+    amount_of_initial_disposal: Yup.number("must be Number")
+        .typeError("Amount must be a number")
+        .required("Required"),
     // nominatedBeneficiaries
     name: Yup.string().required("Required"),
-    age: Yup.number().required("Required"),
+    age: Yup.number("must be Number")
+        .typeError("Amount must be a number")
+        .required("Required"),
     relationship: Yup.string().required("Required"),
     // personalDetails
     surname: Yup.string().required("Required"),
@@ -45,12 +57,28 @@ export const validate = Yup.object({
     // termsAndConditions
     terms_table: Yup.string().required("Required"),
     // typesOfProductPurchased
-    glen_forest_memorial_park: Yup.number().required("Required"),
-    chemhute_park: Yup.number().required("Required"),
-    matidoda_park: Yup.number().required("Required"),
-    single_unit: Yup.number().required("Required"),
-    double_unit: Yup.number().required("Required"),
-    triple_unit: Yup.number().required("Required"),
-    family_close: Yup.number().required("Required"),
-    other_detail: Yup.string().required("Required"),
+    glen_forest_memorial_park: Yup.number("must be Number")
+        .typeError("Amount must be a number")
+        .required("Required"),
+    chemhute_park: Yup.number("must be Number")
+        .typeError("Amount must be a number")
+        .required("Required"),
+    matidoda_park: Yup.number("must be Number")
+        .typeError("Amount must be a number")
+        .required("Required"),
+    single_unit: Yup.number("must be Number")
+        .typeError("Amount must be a number")
+        .required("Required"),
+    double_unit: Yup.number("must be Number")
+        .typeError("Amount must be a number")
+        .required("Required"),
+    triple_unit: Yup.number("must be Number")
+        .typeError("Amount must be a number")
+        .required("Required"),
+    family_close: Yup.number("must be Number")
+        .typeError("Amount must be a number")
+        .required("Required"),
+    other_detail: Yup.string("must be Number")
+        .typeError("Amount must be a number")
+        .required("Required"),
 });
