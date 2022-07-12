@@ -11,109 +11,57 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
         <!-- Styles -->
-        <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-
-      .b-example-divider {
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
-
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
-
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
-
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
-      .nav {
-    --bs-nav-link-padding-x: 1rem;
-    --bs-nav-link-padding-y: 0.5rem;
-    --bs-nav-link-font-weight: ;
-    --bs-nav-link-color: var(--bs-link-color);
-    --bs-nav-link-hover-color: var(--bs-link-hover-color);
-    --bs-nav-link-disabled-color: #6c757d;
-    display: flex;
-    flex-wrap: wrap;
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
-}
-
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-    </style>
+        <link rel="stylesheet" href="/css/style.css">
         
-
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-                
-            }
-        </style>
     </head>
-    <body class="d-flex h-100 text-center " style=" background-color:#2C3639; color:#FFFFFF">
-      
-        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column" >
-            <header class="mb-auto" style=" background-color:#2C3639D0;">
-                <div>
-                    <h3 class="float-md-start m-3" style="color:#D4D925">GFMP LOGO HERE</h3>
-                    <nav class="nav nav-masthead justify-content-center float-md-end" >
+    <body >
+            <header> 
+                    <nav class="navbar sticky-top">
+                      <div class="logo">GFMP</div>
+                      <ul>
                         @if (Route::has('login'))
-                                @auth
-                                    <a href="{{ url('/home') }}" class="nav-link fw-bold py-1 m-2 px-0">Home</a>
-                                @else
-                                    <a href="{{ route('login') }}" class="nav-link fw-bold py-1 m-2 px-0">Log in</a>
-            
-                                    @if (Route::has('register'))
-                                        <a href="{{ route('register') }}" class="nav-link fw-bold py-1 m-2 px-0">Register</a>
-                                    @endif
-                                @endauth
-                            
-                        @endif
+                            @auth
+                        <li><a href="{{ url('/home') }}" >Home</a></li>
+                              @else
+                        <li><a href="{{ route('login') }}" >Log in</a></li>
+                              @if (Route::has('register'))
+                        <li><a href="{{ route('register') }}" >Register</a></li>
+                      </ul>  
+                              @endif
+                            @endauth
+                        @endif   
                     </nav>
-                </div>
             </header>
-            <main class="px-3">
-                <h1>Our Landing Page Here</h1>
-                <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum reprehenderit voluptate veniam obcaecati repudiandae at suscipit, eum magni iste voluptatum est ab sed repellendus, quidem impedit veritatis maiores dolorum. Exercitationem.</p>
-            </main>
-                <footer class="mt-auto text-white-50">
-                    <p>Cover template for <a href="#" class="text-white">.....</a>, by <a href="#" class="text-white">GFMP Team</a>.</p>
-                </footer>
-        </div>
+            
+          <div class="firstSection">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="/assets/bg1.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="/assets/bg2.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="/assets/bg3.jpg" class="d-block w-100" alt="...">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div> 
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     </body>
 </html>
