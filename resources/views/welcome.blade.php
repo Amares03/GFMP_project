@@ -12,12 +12,16 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
         <!-- Styles -->
         <link rel="stylesheet" href="/css/style.css">
-        
+       
     </head>
     <body >
-            <header> 
-                    <nav class="navbar sticky-top">
-                      <div class="logo">GFMP</div>
+      <!-- <div class="bigLogo">
+        <div class="logo">Glen Forest Memorial Park</div>
+      </div> -->
+      
+      <header>
+                  
+                  <a href="#" class="logo">GFMP</a>   
                       <ul>
                         @if (Route::has('login'))
                             @auth
@@ -30,38 +34,132 @@
                               @endif
                             @endauth
                         @endif   
-                    </nav>
+                    
+
             </header>
             
-          <div class="firstSection">
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-              <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-              </div>
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src="/assets/bg1.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                  <img src="/assets/bg2.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                  <img src="/assets/bg3.jpg" class="d-block w-100" alt="...">
-                </div>
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
+         <div class="banner">
+            <div class="slider">
+                <img src="/assets/bg3.jpg" alt="..." id="slideImg">
             </div>
-          </div> 
+         </div>
+         <div class="leadingText">
+              <p>PICNIC AND TRAILS STATUS: OPEN</p>
+              <p>CLICK HERE TO VIEW PARK TRAILS GUIDE</p>
+         </div>
+         <div class="container crd">
+            <div class="card">
+              <div class="card-body">
+                <img src="/assets/card1.png" alt="" id="cardImg">
+              </div>
+            </div>
+          </div>
+          <div class="container mission">
+            <p>Our mission:</p>
+            <p> <b>Preserve, Restore, and Enhance Memorial Park </b> for the enjoyment of all Houstonians, today and tomorrow</p>
+          </div>
+        <div class="container information">
+          <div class="row first-row">
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                 <h5 class="card-title">Park Information</h5>
+                   <ul class="list-group list-group-flush">
+                      <li class="list-group-item"><a href="#">park information</a></li>
+                      <li class="list-group-item"><a href="#">park information</a></li>
+                      <li class="list-group-item"><a href="#">park information</a></li>
+                      <li class="list-group-item"><a href="#">park information</a></li>
+                      <li class="list-group-item"><a href="#">park information</a></li>
+                      <li class="list-group-item"><a href="#">park information</a></li>
+                   </ul>
+                </div>
+                <div class="card-footer "></div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  some text
+                </div>
+                <div class="card-footer"></div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  some text
+                </div>
+                <div class="card-footer "></div>
+              </div>
+            </div>
+          </div>
+          <div class="row second-row">
+            <div class="card">
+                 <div class="card-header">
+                    <h5>FEATURED AT MEMORIAL PARK CONSERVANCY</h5>
+                 </div>
+              <div class="card-body">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore vel porro enim aut quibusdam ipsa, molestiae assumenda saepe expedita aperiam quidem? Nihil reprehenderit sapiente eligendi deleniti consequuntur quisquam molestiae eos.</p>
+              </div>
+            </div>
+          </div>
+          <div class="row second-row">
+            <div class="card">
+                 <div class="card-header">
+                    <h5>FEATURED AT MEMORIAL PARK CONSERVANCY</h5>
+                 </div>
+              <div class="card-body">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore vel porro enim aut quibusdam ipsa, molestiae assumenda saepe expedita aperiam quidem? Nihil reprehenderit sapiente eligendi deleniti consequuntur quisquam molestiae eos.</p>
+              </div>
+            </div>
+          </div>
+           <div class="row first-row">
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                 <h5 class="card-title">Park Information</h5>
+                   <ul class="list-group list-group-flush">
+                      <li class="list-group-item"><a href="#">park information</a></li>
+                      <li class="list-group-item"><a href="#">park information</a></li>
+                      <li class="list-group-item"><a href="#">park information</a></li>
+                      <li class="list-group-item"><a href="#">park information</a></li>
+                      <li class="list-group-item"><a href="#">park information</a></li>
+                      <li class="list-group-item"><a href="#">park information</a></li>
+                   </ul>
+                </div>
+                <div class="card-footer "></div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  some text
+                </div>
+                <div class="card-footer"></div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  some text
+                </div>
+                <div class="card-footer "></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+       <footer>
+        <div class="container foot">
+          <div class="row">
+            <div class="col">
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+            </div>
+            <div class="col"></div>
+            <div class="col"></div>
+          </div>
+        </div>
+       </footer>
     </body>
+     <script src="/js/landingPage.js"></script>
 </html>
