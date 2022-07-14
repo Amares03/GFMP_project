@@ -21,7 +21,7 @@
       
       <header>
                   
-                  <a href="#" class="logo">GFMP</a>   
+                  <a href="#" class="logo"><div class="logoCover"><img src="/assets/logo.png" alt="..."></div></a>   
                       <ul>
                         @if (Route::has('login'))
                             @auth
@@ -65,13 +65,14 @@
                 <div class="card-body">
                  <h5 class="card-title">Park Information</h5>
                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item"><a href="#">park information</a></li>
-                      <li class="list-group-item"><a href="#">park information</a></li>
-                      <li class="list-group-item"><a href="#">park information</a></li>
-                      <li class="list-group-item"><a href="#">park information</a></li>
-                      <li class="list-group-item"><a href="#">park information</a></li>
-                      <li class="list-group-item"><a href="#">park information</a></li>
+                      <li class="list-group-item"><a href="#"><i class="bi bi-chevron-right"></i>park information</a></li>
+                      <li class="list-group-item"><a href="#"><i class="bi bi-chevron-right"></i>park information</a></li>
+                      <li class="list-group-item"><a href="#"><i class="bi bi-chevron-right"></i>park information</a></li>
+                      <li class="list-group-item"><a href="#"><i class="bi bi-chevron-right"></i>park information</a></li>
+                      <li class="list-group-item"><a href="#"><i class="bi bi-chevron-right"></i>park information</a></li>
+                      <li class="list-group-item"><a href="#"><i class="bi bi-chevron-right"></i>park information</a></li>
                    </ul>
+                   
                 </div>
                 <div class="card-footer "></div>
               </div>
@@ -79,7 +80,12 @@
             <div class="col">
               <div class="card">
                 <div class="card-body">
-                  some text
+                  <div class="peopleImg">
+                    <img src="/assets/people.jpg" alt="..." class="peopleImgImg">
+                  </div>
+                  <p>Houston Rodeo Trail Riders</p>
+                  <p>return to Memorial Park</p>
+                 <button type="button" class="btn btn-outline-success">Read More</button>
                 </div>
                 <div class="card-footer"></div>
               </div>
@@ -87,7 +93,7 @@
             <div class="col">
               <div class="card">
                 <div class="card-body">
-                  some text
+               
                 </div>
                 <div class="card-footer "></div>
               </div>
@@ -109,7 +115,12 @@
                     <h5>FEATURED AT MEMORIAL PARK CONSERVANCY</h5>
                  </div>
               <div class="card-body">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore vel porro enim aut quibusdam ipsa, molestiae assumenda saepe expedita aperiam quidem? Nihil reprehenderit sapiente eligendi deleniti consequuntur quisquam molestiae eos.</p>
+                <div class="row">
+                  <div class="col"><img src="/assets/building.svg" alt="..."></div>
+                  <div class="col"><img src="/assets/house.svg" alt="..."></div>
+                  <div class="col"><img src="/assets/bank.svg" alt="..."></div>
+                 
+                </div>
               </div>
             </div>
           </div>
@@ -117,15 +128,9 @@
             <div class="col">
               <div class="card">
                 <div class="card-body">
-                 <h5 class="card-title">Park Information</h5>
-                   <ul class="list-group list-group-flush">
-                      <li class="list-group-item"><a href="#">park information</a></li>
-                      <li class="list-group-item"><a href="#">park information</a></li>
-                      <li class="list-group-item"><a href="#">park information</a></li>
-                      <li class="list-group-item"><a href="#">park information</a></li>
-                      <li class="list-group-item"><a href="#">park information</a></li>
-                      <li class="list-group-item"><a href="#">park information</a></li>
-                   </ul>
+                 <div class="peopleImg">
+                    <img src="/assets/people1.jpg" alt="..." class="peopleImgImg">
+                  </div>
                 </div>
                 <div class="card-footer "></div>
               </div>
@@ -133,7 +138,9 @@
             <div class="col">
               <div class="card">
                 <div class="card-body">
-                  some text
+                   <div class="peopleImg">
+                    <img src="/assets/people2.jpg" alt="..." class="peopleImgImg">
+                  </div>
                 </div>
                 <div class="card-footer"></div>
               </div>
@@ -141,7 +148,9 @@
             <div class="col">
               <div class="card">
                 <div class="card-body">
-                  some text
+                  <div class="peopleImg">
+                    <img src="/assets/people3.jpg" alt="..." class="peopleImgImg">
+                  </div>
                 </div>
                 <div class="card-footer "></div>
               </div>
@@ -152,11 +161,23 @@
        <footer>
         <div class="container foot">
           <div class="row">
-            <div class="col">
-
+            <div class="col f-col">
+              <img src="/assets/logo.png" alt="..." id="footLogo">
             </div>
-            <div class="col"></div>
-            <div class="col"></div>
+            <div class="col f-col">
+              <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Press</a></li>
+                <li><a href="#">Contact Us</a></li>
+              </ul>
+            </div>
+            <div class="col f-col"></div>
+          </div>
+          <div class="row">
+              <div class="col s-col"><img src="/assets/facebook.svg" alt=""></div>
+              <div class="col s-col"><img src="/assets/instagram.svg" alt=""></div>
+              <div class="col s-col"><img src="/assets/twitter.svg" alt=""></div>
+              <div class="col s-col"><img src="/assets/whatsapp.svg" alt=""></div>
           </div>
         </div>
        </footer>
